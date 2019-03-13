@@ -9,7 +9,7 @@ namespace ATSEntity
     /// <summary>
     /// 学习情况
     /// </summary>
-    class Study
+    public class Study
     {
         public string StudyBeginTime01 { get; set; }
         public string StudyEndTime01 { get; set; }

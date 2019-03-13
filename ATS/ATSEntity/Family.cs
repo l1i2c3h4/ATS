@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATSEntity
 {
-    class Family
+    public class Family
     {
         public string FamilyRelationship01 { get; set; }
         public string FamilyName01 { get; set; }

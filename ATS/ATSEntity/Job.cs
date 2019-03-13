@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATSEntity
 {
-    class Job
+    public class Job
     {
         public string Worker  { get; set; }
         public string WorkID { get; set; }

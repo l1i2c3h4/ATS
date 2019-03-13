@@ -309,6 +309,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ATSDLL\JobDLL.cs" />
+    <Compile Include="ATSDLL\SqlHelper.cs" />
     <Compile Include="ATSEntity\baseInfomation.cs" />
     <Compile Include="ATSEntity\Family.cs" />
     <Compile Include="ATSEntity\Job.cs" />
@@ -329,7 +331,6 @@
       <DependentUpon>job.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -343,7 +344,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ATSBLL\" />
-    <Folder Include="ATSDLL\" />
     <Folder Include="css\images\index\" />
     <Folder Include="css\images\应聘处理\" />
     <Folder Include="css\images\求职岗位管理\" />

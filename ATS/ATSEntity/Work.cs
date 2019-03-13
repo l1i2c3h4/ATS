@@ -9,7 +9,7 @@ namespace ATSEntity
     /// <summary>
     /// 工作信息
     /// </summary>
-    class Work
+    public class Work
     {
         public string WorkBeginTime01 { get; set; }
         public string WorkEndTime01 { get; set; }

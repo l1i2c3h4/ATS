@@ -40,7 +40,11 @@
             <asp:Button ID="Button_chaxun" runat="server" Height="26px" Text="查询" Width="71px" />
             <br />
             <br />
-            <asp:GridView ID="GridView1" runat="server">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="worker" HeaderText="岗位" />
+                    <asp:CommandField ShowDeleteButton="True" />
+                </Columns>
             </asp:GridView>
 &nbsp;
         </div>

@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.Common;
 using System.Configuration;
-namespace ADONET
+namespace ATS.ATSDLL
 {
     public class SqlHelper : IDisposable
     {
