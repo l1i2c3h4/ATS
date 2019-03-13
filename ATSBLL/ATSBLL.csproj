@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A9DD15D6-5001-4783-A545-3C8DE57CEBCB}</ProjectGuid>
+    <ProjectGuid>{1075E66B-6A2D-4BAF-9FB6-90D4E1B014A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ATSEntity</RootNamespace>
-    <AssemblyName>ATSEntity</AssemblyName>
+    <RootNamespace>ATSBLL</RootNamespace>
+    <AssemblyName>ATSBLL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
