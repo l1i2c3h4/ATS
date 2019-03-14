@@ -24,6 +24,14 @@
         $axure.utils.getOtherPath = function () { return '../css/resources/Other.html'; };
         $axure.utils.getReloadPath = function () { return '../css/resources/reload.html'; };
     </script>
+    <style type="text/css">
+        .auto-style1 {
+            left: 61px;
+            top: 79px;
+            width: 70px;
+            height: 42px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,7 +39,10 @@
             <p><span>第一步：填写基本信息 </span></p>
         </div>
         <div id="u3" class="ax_default label">
-            <p><span>填写说明</span></p>
+            <div id="u3_div" class=""></div>
+            <div id="u3_text" class="text ">
+                <p><span>填写说明</span></p>
+            </div>
         </div>
         <div id="u4" class="ax_default _文本段落">
             <p><span>1. *号为必填项目；</span></p>

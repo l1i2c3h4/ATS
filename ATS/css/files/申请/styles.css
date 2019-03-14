@@ -68,8 +68,8 @@
 #u3 {
   border-width:0px;
   position:absolute;
-  left:28px;
-  top:71px;
+  left:22px;
+  top:126px;
   width:66px;
   height:16px;
   color:#FFFFFF;
@@ -100,8 +100,8 @@
 #u4 {
   border-width:0px;
   position:absolute;
-  left:50px;
-  top:143px;
+  left:43px;
+  top:160px;
   width:300px;
   height:48px;
 }
@@ -236,9 +236,9 @@
 #u8_text {
   border-width:0px;
   position:absolute;
-  left:168px;
-  top:316px;
-  width:610px;
+  left:0px;
+  top:0px;
+  width:208px;
   word-wrap:break-word;
 }
 #u9 {

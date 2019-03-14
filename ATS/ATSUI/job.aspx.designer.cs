@@ -49,6 +49,15 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.Button Button_zengjia;
         
         /// <summary>
+        /// vldJob 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator vldJob;
+        
+        /// <summary>
         /// Label2 控件。
         /// </summary>
         /// <remarks>

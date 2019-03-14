@@ -14,5 +14,15 @@ namespace ATS.ATSBLL
         {         
             return JobDLL.GetBynull();
         }
+
+        public static void DeletedJob(string job)
+        {
+            JobDLL.DeletedJob(job);
+        }
+
+        public static void AddJob(string job)
+        {
+            JobDLL.AddJob(job);
+        }
     }
 }
