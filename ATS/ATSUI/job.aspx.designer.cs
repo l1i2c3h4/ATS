@@ -10,7 +10,7 @@
 namespace ATS.ATSUI {
     
     
-    public partial class job {
+    public partial class Job {
         
         /// <summary>
         /// form1 控件。

@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ATSUI\Apply.aspx" />
-    <Content Include="ATSUI\job.aspx" />
+    <Content Include="ATSUI\Job.aspx" />
     <Content Include="css\data\document.js" />
     <Content Include="css\data\styles.css" />
     <Content Include="css\files\index\data.js" />
@@ -309,6 +309,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ATSBLL\JobBLL.cs" />
     <Compile Include="ATSDLL\JobDLL.cs" />
     <Compile Include="ATSDLL\SqlHelper.cs" />
     <Compile Include="ATSEntity\baseInfomation.cs" />
@@ -323,12 +324,12 @@
     <Compile Include="ATSUI\Apply.aspx.designer.cs">
       <DependentUpon>Apply.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ATSUI\job.aspx.cs">
-      <DependentUpon>job.aspx</DependentUpon>
+    <Compile Include="ATSUI\Job.aspx.cs">
+      <DependentUpon>Job.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ATSUI\job.aspx.designer.cs">
-      <DependentUpon>job.aspx</DependentUpon>
+    <Compile Include="ATSUI\Job.aspx.designer.cs">
+      <DependentUpon>Job.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -343,7 +344,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ATSBLL\" />
     <Folder Include="css\images\index\" />
     <Folder Include="css\images\应聘处理\" />
     <Folder Include="css\images\求职岗位管理\" />

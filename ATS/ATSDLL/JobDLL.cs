@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Web;
 using ATSEntity;
+using System.Data;
 
 namespace ATS.ATSDLL
 {
@@ -13,27 +14,18 @@ namespace ATS.ATSDLL
         /// 读取目前招聘的岗位
         /// </summary>
         /// <returns>返回目前的岗位</returns>
-        public static Job GetBynull()
+        public static DataTable GetBynull()
         {
-            Job Work = null;
+            DataTable table = null;
             using (SqlHelper db = new SqlHelper())
             {
-                string sql = "select worker from BankAccount ";
+                string sql = "select worker from job ";
                 using (DbCommand command = db.GetSqlStringCommond(sql))
                 {
-                    using (DbDataReader reader = db.ExecuteReader(command))
-                    {
-                        //将从数据库读取的数据转换成Job类的实例
-                        if (!reader.Read())
-                            return null;
-                        Work = new Job
-                        {
-                            Worker = reader["worker"].ToString()
-                        };
-                    }
+                    table = db.ExecuteDataTable(command);
                 }
             }
-            return Work;
+            return table;
         }
     }
 }
