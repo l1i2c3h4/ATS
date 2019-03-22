@@ -22,13 +22,22 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// vldRangeValidator 控件。
+        /// ValidationSummary1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator vldRangeValidator;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
+        /// RequiredFieldValidator_name 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_name;
         
         /// <summary>
         /// TextBox_Name 控件。
@@ -40,6 +49,15 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.TextBox TextBox_Name;
         
         /// <summary>
+        /// RequiredFieldValidator_Gender 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Gender;
+        
+        /// <summary>
         /// DropDownList_Gender 控件。
         /// </summary>
         /// <remarks>
@@ -49,13 +67,31 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Gender;
         
         /// <summary>
-        /// TextBox_NativePlace 控件。
+        /// DropDownList_NativePlace 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_NativePlace;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_NativePlace;
+        
+        /// <summary>
+        /// RequiredFieldValidator_IDCard 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_IDCard;
+        
+        /// <summary>
+        /// RegularExpressionValidator_IDCard 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator_IDCard;
         
         /// <summary>
         /// TextBox_IDCard 控件。
@@ -67,6 +103,24 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.TextBox TextBox_IDCard;
         
         /// <summary>
+        /// RequiredFieldValidator_DateOfBirth 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_DateOfBirth;
+        
+        /// <summary>
+        /// RegularExpressionValidator_DateOfBirth 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator_DateOfBirth;
+        
+        /// <summary>
         /// TextBox_DateOfBirth 控件。
         /// </summary>
         /// <remarks>
@@ -76,31 +130,40 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.TextBox TextBox_DateOfBirth;
         
         /// <summary>
-        /// TextBox_MaritalStatus 控件。
+        /// DropDownList_MaritalStatus 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_MaritalStatus;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_MaritalStatus;
         
         /// <summary>
-        /// TextBox_PoliticalStatus 控件。
+        /// DropDownList_PoliticalStatus 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_PoliticalStatus;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_PoliticalStatus;
         
         /// <summary>
-        /// TextBox_Height 控件。
+        /// DropDownList_Height 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Height;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Height;
+        
+        /// <summary>
+        /// RangeValidator_Weight 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator_Weight;
         
         /// <summary>
         /// TextBox_Weight 控件。
@@ -112,6 +175,15 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.TextBox TextBox_Weight;
         
         /// <summary>
+        /// RequiredFieldValidator_NaticePlace 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_NaticePlace;
+        
+        /// <summary>
         /// TextBox_NaticePlace 控件。
         /// </summary>
         /// <remarks>
@@ -119,6 +191,15 @@ namespace ATS.ATSUI {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_NaticePlace;
+        
+        /// <summary>
+        /// RequiredFieldValidator_Address 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Address;
         
         /// <summary>
         /// TextBox_Address 控件。
@@ -130,6 +211,24 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.TextBox TextBox_Address;
         
         /// <summary>
+        /// RequiredFieldValidator_Email 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Email;
+        
+        /// <summary>
+        /// RegularExpressionValidator_Email 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator_Email;
+        
+        /// <summary>
         /// TextBox_Email 控件。
         /// </summary>
         /// <remarks>
@@ -139,31 +238,40 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.TextBox TextBox_Email;
         
         /// <summary>
-        /// TextBox_CommunicableDisease 控件。
+        /// DropDownList_CommunicableDisease 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_CommunicableDisease;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_CommunicableDisease;
         
         /// <summary>
-        /// TextBox_Achromatopsia 控件。
+        /// DropDownList_Achromatopsia 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Achromatopsia;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Achromatopsia;
         
         /// <summary>
-        /// TextBox_EstimatedTime 控件。
+        /// RequiredFieldValidator_EstimatedTime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_EstimatedTime;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_EstimatedTime;
+        
+        /// <summary>
+        /// DropDownList_EstimatedTime 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_EstimatedTime;
         
         /// <summary>
         /// TextBox_FirstChoice 控件。
@@ -184,13 +292,13 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.TextBox TextBox_SecondChoice;
         
         /// <summary>
-        /// TextBox_Adjust 控件。
+        /// DropDownList_Adjust 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Adjust;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Adjust;
         
         /// <summary>
         /// TextBox_workBeginTime01 控件。

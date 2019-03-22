@@ -62,13 +62,18 @@
                             <li>所有联系方式均填写手机号码。</li>
                         </ol>
                     </div>
+                    <span style="color: red; font-size: medium">
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+                    </span>
                 </div>
 
 
 
                 <h3><b>基本情况</b></h3>
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Name">姓名</label><span style="color: red; font-size: large;"> * <asp:RequiredFieldValidator ID="vldRangeValidator" runat="server" ControlToValidate="TextBox_Name" ErrorMessage="姓名不能为空 "></asp:RequiredFieldValidator></span>
+                    <label class="control-label col-md-2" for="Name">姓名</label><span style="color: red; font-size: large;"> * 
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_name" ControlToValidate="TextBox_Name" runat="server" ErrorMessage="姓名不能为空"></asp:RequiredFieldValidator>
+                    </span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_Name" class="form-control" runat="server"></asp:TextBox>
 
@@ -77,22 +82,84 @@
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="Gender">性别</label><span style="color: red; font-size: large;"> *
-                    </span><div class="col-md-4">
-                          <asp:DropDownList ID="DropDownList_Gender" runat="server">
-                    </asp:DropDownList>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-md-2" for="NativePlace">民族</label><span style="color: red; font-size: large;"> *</span>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator_Gender" ControlToValidate="DropDownList_Gender" runat="server" ErrorMessage="性别不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_NativePlace" class="form-control" runat="server"></asp:TextBox>
-
+                        <asp:DropDownList ID="DropDownList_Gender" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem Text="男" Value="男"></asp:ListItem>
+                            <asp:ListItem Text="女" Value="女"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="IDCard">身份证号</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="NativePlace">民族</label><span style="color: red; font-size: large;"> * </span>
+                    <div class="col-md-4">
+                        <asp:DropDownList ID="DropDownList_NativePlace" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem Text="汉族" Value="汉族" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="阿昌族" Value="阿昌族"></asp:ListItem>
+                            <asp:ListItem Text="白族" Value="白族"></asp:ListItem>
+                            <asp:ListItem Text="保安族" Value="保安族"></asp:ListItem>
+                            <asp:ListItem Text="布朗族" Value="布朗族"></asp:ListItem>
+                            <asp:ListItem Text="布依族" Value="布依族"></asp:ListItem>
+                            <asp:ListItem Text="朝鲜族" Value="朝鲜族"></asp:ListItem>
+                            <asp:ListItem Text="达斡尔族" Value="达斡尔族"></asp:ListItem>
+                            <asp:ListItem Text="傣族" Value="傣族"></asp:ListItem>
+                            <asp:ListItem Text="德昂族" Value="德昂族"></asp:ListItem>
+                            <asp:ListItem Text="侗族" Value="侗族"></asp:ListItem>
+                            <asp:ListItem Text="东乡族" Value="东乡族"></asp:ListItem>
+                            <asp:ListItem Text="独龙族" Value="独龙族"></asp:ListItem>
+                            <asp:ListItem Text="鄂伦春族" Value="鄂伦春族"></asp:ListItem>
+                            <asp:ListItem Text="俄罗斯族" Value="俄罗斯族"></asp:ListItem>
+                            <asp:ListItem Text="鄂温克族" Value="鄂温克族"></asp:ListItem>
+                            <asp:ListItem Text="高山族" Value="高山族"></asp:ListItem>
+                            <asp:ListItem Text="仡佬族" Value="仡佬族"></asp:ListItem>
+                            <asp:ListItem Text="哈尼族" Value="哈尼族"></asp:ListItem>
+                            <asp:ListItem Text="哈萨克族" Value="哈萨克族"></asp:ListItem>
+                            <asp:ListItem Text="赫哲族" Value="赫哲族"></asp:ListItem>
+                            <asp:ListItem Text="回族" Value="回族"></asp:ListItem>
+                            <asp:ListItem Text="基诺族" Value="基诺族"></asp:ListItem>
+                            <asp:ListItem Text="京族" Value="京族"></asp:ListItem>
+                            <asp:ListItem Text="景颇族" Value="景颇族"></asp:ListItem>
+                            <asp:ListItem Text="柯尔克孜族" Value="柯尔克孜族"></asp:ListItem>
+                            <asp:ListItem Text="拉祜族" Value="拉祜族"></asp:ListItem>
+                            <asp:ListItem Text="黎族" Value="黎族"></asp:ListItem>
+                            <asp:ListItem Text="傈僳族" Value="傈僳族"></asp:ListItem>
+                            <asp:ListItem Text="珞巴族" Value="珞巴族"></asp:ListItem>
+                            <asp:ListItem Text="满族" Value="满族"></asp:ListItem>
+                            <asp:ListItem Text="毛南族" Value="毛南族"></asp:ListItem>
+                            <asp:ListItem Text="门巴族" Value="门巴族"></asp:ListItem>
+                            <asp:ListItem Text="蒙古族" Value="蒙古族"></asp:ListItem>
+                            <asp:ListItem Text="苗族" Value="苗族"></asp:ListItem>
+                            <asp:ListItem Text="仫佬族" Value="仫佬族"></asp:ListItem>
+                            <asp:ListItem Text="纳西族" Value="纳西族"></asp:ListItem>
+                            <asp:ListItem Text="怒族" Value="怒族"></asp:ListItem>
+                            <asp:ListItem Text="普米族" Value="普米族"></asp:ListItem>
+                            <asp:ListItem Text="羌族" Value="羌族"></asp:ListItem>
+                            <asp:ListItem Text="撒拉族" Value="撒拉族"></asp:ListItem>
+                            <asp:ListItem Text="畲族" Value="畲族"></asp:ListItem>
+                            <asp:ListItem Text="水族" Value="水族"></asp:ListItem>
+                            <asp:ListItem Text="塔吉克族" Value="塔吉克族"></asp:ListItem>
+                            <asp:ListItem Text="塔塔尔族" Value="塔塔尔族"></asp:ListItem>
+                            <asp:ListItem Text="土族" Value="土族"></asp:ListItem>
+                            <asp:ListItem Text="土家族" Value="土家族"></asp:ListItem>
+                            <asp:ListItem Text="佤族" Value="佤族"></asp:ListItem>
+                            <asp:ListItem Text="锡伯族" Value="锡伯族"></asp:ListItem>
+                            <asp:ListItem Text="乌兹别克族" Value="乌兹别克族"></asp:ListItem>
+                            <asp:ListItem Text="瑶族" Value="瑶族"></asp:ListItem>
+                            <asp:ListItem Text="彝族" Value="彝族"></asp:ListItem>
+                            <asp:ListItem Text="裕固族" Value="裕固族"></asp:ListItem>
+                            <asp:ListItem Text="裕固族" Value="裕固族"></asp:ListItem>
+                            <asp:ListItem Text="维吾尔族" Value="维吾尔族"></asp:ListItem>
+                            <asp:ListItem Text="壮族" Value="壮族"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2" for="IDCard">身份证号</label><span style="color: red; font-size: large;"> * 
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_IDCard" ControlToValidate="TextBox_IDCard" runat="server" ErrorMessage="身份证号不能为空"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator_IDCard" runat="server" ValidationExpression="(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$)" ControlToValidate="TextBox_IDCard" ErrorMessage="请输入正确的身份证号"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_IDCard" class="form-control" runat="server"></asp:TextBox>
 
@@ -100,7 +167,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="DateOfBirth">出生日期</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="DateOfBirth">出生日期</label><span style="color: red; font-size: large;"> * 
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_DateOfBirth" ControlToValidate="TextBox_DateOfBirth" runat="server" ErrorMessage="出生日期不能为空"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator_DateOfBirth" runat="server" ValidationExpression="((?!0000)[0-9]{4}-((0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-8])|(0[13-9]|1[0-2])-(29|30)|(0[13578]|1[02])-31)|([0-9]{2}(0[48]|[2468][048]|[13579][26])|(0[48]|[2468][048]|[13579][26])00)-02-29)" ControlToValidate="TextBox_DateOfBirth" ErrorMessage="请输入正确的出生日期如1989-01-01"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_DateOfBirth" class="form-control" runat="server"></asp:TextBox>
 
@@ -108,9 +177,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="MaritalStatus">婚姻状况</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="MaritalStatus">婚姻状况</label><span style="color: red; font-size: large;"> *
+                    </span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_MaritalStatus" class="form-control" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList_MaritalStatus" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem Text="已婚" Value="已婚"></asp:ListItem>
+                            <asp:ListItem Text="未婚" Value="未婚" Selected="True"></asp:ListItem>
+                        </asp:DropDownList>
 
                     </div>
                 </div>
@@ -118,29 +191,44 @@
                 <div class="form-group">
                     <label class="control-label col-md-2" for="PoliticalStatus">政治面貌</label><span style="color: red; font-size: large;"> *</span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_PoliticalStatus" class="form-control" runat="server"></asp:TextBox>
-
+                        <asp:DropDownList ID="DropDownList_PoliticalStatus" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem Text="中共党员" Value="中共党员"></asp:ListItem>
+                            <asp:ListItem Text="共青团员" Value="共青团员"></asp:ListItem>
+                            <asp:ListItem Text="民主党派或无党派人士" Value="民主党派或无党派人士"></asp:ListItem>
+                            <asp:ListItem Text="群众" Value="群众" Selected="True"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="Height">身高</label><span style="color: red; font-size: large;"> *</span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_Height" class="form-control" runat="server"></asp:TextBox>
-
+                        <asp:DropDownList ID="DropDownList_Height" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem Text="190cm以上" Value="190cm以上" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="185-190cm" Value="185-190cm"></asp:ListItem>
+                            <asp:ListItem Text="180-185cm" Value="180-185cm"></asp:ListItem>
+                            <asp:ListItem Text="175-180cm" Value="175-180cm"></asp:ListItem>
+                            <asp:ListItem Text="170-175cm" Value="170-175cm"></asp:ListItem>
+                            <asp:ListItem Text="165-170cm" Value="165-170cm"></asp:ListItem>
+                            <asp:ListItem Text="160-165cm" Value="160-165cm"></asp:ListItem>
+                            <asp:ListItem Text="155-160cm" Value="155-160cm"></asp:ListItem>
+                            <asp:ListItem Text="150-155cm" Value="150-155cm"></asp:ListItem>
+                            <asp:ListItem Text="150cm以下" Value="150cm以下"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Weight">体重</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="Weight">体重（KG）</label><span style="color: red; font-size: large;"> *
+                        <asp:RangeValidator ID="RangeValidator_Weight" runat="server" ErrorMessage="请输入整数的体重值" ControlToValidate="TextBox_Weight" MaximumValue="200" MinimumValue="1" Type="Integer" EnableClientScript="False"></asp:RangeValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_Weight" class="form-control" runat="server"></asp:TextBox>
-
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="NaticePlace">籍贯</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="NaticePlace">籍贯</label><span style="color: red; font-size: large;"> *
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_NaticePlace" ControlToValidate="TextBox_NaticePlace" runat="server" ErrorMessage="籍贯不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_NaticePlace" class="form-control" runat="server"></asp:TextBox>
 
@@ -148,7 +236,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Address">住址</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="Address">住址</label><span style="color: red; font-size: large;"> *
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_Address" ControlToValidate="TextBox_Address" runat="server" ErrorMessage="住址不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_Address" class="form-control" runat="server"></asp:TextBox>
 
@@ -156,7 +245,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Email">电子邮箱</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="Email">电子邮箱</label><span style="color: red; font-size: large;"> *
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_Email" ControlToValidate="TextBox_Email" runat="server" ErrorMessage="电子邮件不能为空"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator_Email" runat="server" ValidationExpression="^\s*([A-Za-z0-9_-]+(\.\w+)*@(\w+\.)+\w{2,5})\s*$" ControlToValidate="TextBox_Email" ErrorMessage="请输入正确的电子邮件"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_Email" class="form-control" runat="server"></asp:TextBox>
 
@@ -164,23 +255,35 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="CommunicableDisease">是否患有传染病</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="CommunicableDisease">是否患有传染病</label><span style="color: red; font-size: large;"> * </span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_CommunicableDisease" class="form-control" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList_CommunicableDisease" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem Text="是" Value="是"></asp:ListItem>
+                            <asp:ListItem Text="否" Value="否" Selected="True"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="Achromatopsia">是否色盲或色弱</label><span style="color: red; font-size: large;"> *</span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_Achromatopsia" class="form-control" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList_Achromatopsia" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem Text="是" Value="是"></asp:ListItem>
+                            <asp:ListItem Text="否" Value="否" Selected="True"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="EstimatedTime">预计可到岗时间</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="EstimatedTime">预计可到岗时间</label><span style="color: red; font-size: large;"> *
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_EstimatedTime" ControlToValidate="DropDownList_EstimatedTime" runat="server" ErrorMessage="预计可到岗时间不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_EstimatedTime" class="form-control" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList_EstimatedTime" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem Text="随时" Value="随时"></asp:ListItem>
+                            <asp:ListItem Text="一周之内" Value="一周之内"></asp:ListItem>
+                            <asp:ListItem Text="一个月之内" Value="一个月之内"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
 
@@ -201,7 +304,11 @@
                 <div class="form-group">
                     <label class="control-label col-md-2" for="Adjust">是否服从调剂</label><span style="color: red; font-size: large;"> *</span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_Adjust" class="form-control" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList_Adjust" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem Text="是" Value="是"></asp:ListItem>
+                            <asp:ListItem Text="否" Value="否"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
             </div>
@@ -387,9 +494,8 @@
         </div>
         <hr />
         <div class="form-group">
-            <!-- 第三部 -->
             <div class="col-md-12">
-                <h3><b>第三步：填写学习经历</b></h3>
+                <h3><b>第四步：填写家庭信息</b></h3>
             </div>
         </div>
         <div class="container-fluid">
@@ -470,10 +576,14 @@
         <div class="container-fluid">
             <div class="form-horizontal">
                 <div class="form-group">
+
+                    <br />
+                    <br />
                     <asp:Button ID="Button1" runat="server" class="btn btn-primary btn-lg col-md-2 col-md-offset-4" Text="提交简历" />
                     <br />
                     <br />
                     <br />
+
                     <div class="col-md-12">
                         <p style="font-size: medium; font-family: 'KaiTi','Times New Roman', Times, serif">
 
@@ -486,6 +596,7 @@
         <br />
         <br />
         <br />
+
         <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
         <script src="https://code.jquery.com/jquery.js"></script>
         <!-- 包括所有已编译的插件 -->
