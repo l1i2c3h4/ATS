@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <自动生成>
 //     此代码由工具生成。
 //
@@ -238,6 +238,33 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.TextBox TextBox_Email;
         
         /// <summary>
+        /// RequiredFieldValidator_phone 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_phone;
+        
+        /// <summary>
+        /// RegularExpressionValidator_phone 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator_phone;
+        
+        /// <summary>
+        /// TextBox_phone 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_phone;
+        
+        /// <summary>
         /// DropDownList_CommunicableDisease 控件。
         /// </summary>
         /// <remarks>
@@ -274,22 +301,22 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_EstimatedTime;
         
         /// <summary>
-        /// TextBox_FirstChoice 控件。
+        /// DropDownList_FirstChoice 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_FirstChoice;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_FirstChoice;
         
         /// <summary>
-        /// TextBox_SecondChoice 控件。
+        /// DropDownList_SecondChoice 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_SecondChoice;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_SecondChoice;
         
         /// <summary>
         /// DropDownList_Adjust 控件。
@@ -526,22 +553,22 @@ namespace ATS.ATSUI {
         protected global::System.Web.UI.WebControls.TextBox TextBox_studyMajor03;
         
         /// <summary>
-        /// TextBox_studyEnglish 控件。
+        /// DropDownList_StudyEnglish 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_studyEnglish;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_StudyEnglish;
         
         /// <summary>
-        /// TextBox_studyConputer 控件。
+        /// DropDownList_studyConputer 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_studyConputer;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_studyConputer;
         
         /// <summary>
         /// TextBox_studyOther 控件。

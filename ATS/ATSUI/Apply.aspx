@@ -255,6 +255,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="control-label col-md-2" for="phone">联系方式</label><span style="color: red; font-size: large;"> *
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_phone" ControlToValidate="TextBox_phone" runat="server" ErrorMessage="联系方式不能为空"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator_phone" runat="server" ValidationExpression="^1(3|4|5|7|8|9)\d{9}$" ControlToValidate="TextBox_phone" ErrorMessage="请输入正确的手机号"></asp:RegularExpressionValidator></span>
+                    <div class="col-md-4">
+                        <asp:TextBox ID="TextBox_phone" class="form-control" runat="server"></asp:TextBox>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label class="control-label col-md-2" for="CommunicableDisease">是否患有传染病</label><span style="color: red; font-size: large;"> * </span>
                     <div class="col-md-4">
                         <asp:DropDownList ID="DropDownList_CommunicableDisease" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
@@ -290,14 +300,16 @@
                 <div class="form-group">
                     <label class="control-label col-md-2" for="FirstChoice">第一志愿应聘岗位</label><span style="color: red; font-size: large;"> *</span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_FirstChoice" class="form-control" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList_FirstChoice" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                        </asp:DropDownList>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="SecondChoice">第二志愿应聘岗位</label><span style="color: red; font-size: large;"> *</span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_SecondChoice" class="form-control" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList_SecondChoice" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                        </asp:DropDownList>
                     </div>
                 </div>
 
@@ -463,28 +475,36 @@
                 </div>
                 <br />
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="studyEnglish">英语等级</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="studyEnglish">英语等级</label><span style="color: red; font-size: large;"> * </span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_studyEnglish" class="form-control" runat="server"></asp:TextBox>
-
+                        <asp:DropDownList ID="DropDownList_StudyEnglish" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem Text="无" Value="无" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="大学英语4级" Value="大学英语4级"></asp:ListItem>
+                            <asp:ListItem Text="大学英语6级" Value="大学英语6级"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="studyEnglish">计算机等级证书</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="studyConputer">计算机等级证书</label><span style="color: red; font-size: large;"> * </span>
                     <div class="col-md-4">
-                        <asp:TextBox ID="TextBox_studyConputer" class="form-control" runat="server"></asp:TextBox>
-
+                        <asp:DropDownList ID="DropDownList_studyConputer" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem Text="无" Value="无" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="计算机1级" Value="计算机1级"></asp:ListItem>
+                            <asp:ListItem Text="计算机2级" Value="计算机2级"></asp:ListItem>
+                            <asp:ListItem Text="计算机3级" Value="计算机3级"></asp:ListItem>
+                            <asp:ListItem Text="计算机4级" Value="计算机4级"></asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="studyOther">其他证书和特长</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="studyOther">其他证书和特长</label>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_studyOther" class="form-control" TextMode="MultiLine" Style="overflow-y: visible" Width="100%" Wrap="true" runat="server"></asp:TextBox>
 
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="studyPerformance">在校奖惩情况</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="studyPerformance">在校奖惩情况</label>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_studyPerformance" class="form-control" TextMode="MultiLine" Style="overflow-y: visible" Width="100%" Wrap="true" runat="server"></asp:TextBox>
 
@@ -579,7 +599,7 @@
 
                     <br />
                     <br />
-                    <asp:Button ID="Button1" runat="server" class="btn btn-primary btn-lg col-md-2 col-md-offset-4" Text="提交简历" />
+                    <asp:Button ID="Button1" runat="server" class="btn btn-primary btn-lg col-md-2 col-md-offset-4" Text="提交简历" OnClick="Button1_Click" />
                     <br />
                     <br />
                     <br />
