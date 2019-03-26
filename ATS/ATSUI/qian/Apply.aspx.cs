@@ -97,9 +97,10 @@ namespace ATS.ATSUI
             f.FamilyJob02 = TextBox_familyJob02.Text;
             f.FamilyJob03 = TextBox_familyJob03.Text;
 
-            ATSBLL.BaseInformationBLL.AddBaseInformation(b,f,s,w);
+            int i = 0;
+            i = ATSBLL.BaseInformationBLL.AddBaseInformation(b,f,s,w);
             //弹出对话框
-            Page.ClientScript.RegisterStartupScript(Page.GetType(), "message", "<script language='javascript' defer>alert('" + "123" + "');</script>");
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "message", "<script language='javascript' defer>alert('" + "应聘申请提交成功,您的应聘编号为" + i+ "');</script>");
         }
     }
 }

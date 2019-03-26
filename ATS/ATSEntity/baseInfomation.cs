@@ -30,7 +30,7 @@ namespace ATSEntity
         public string SecondChoice { get; set; }
         public string Adjust { get; set; }
         public string EstimatedTime { get; set; }
-
+        public int ApplyNumber { get; set; }
 
 
     }

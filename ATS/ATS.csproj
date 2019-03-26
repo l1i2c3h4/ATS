@@ -67,8 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ATSUI\Apply.aspx" />
+    <Content Include="ATSUI\qian\Apply.aspx" />
     <Content Include="ATSUI\Job.aspx" />
+    <Content Include="ATSUI\qian\Recruit.aspx" />
+    <Content Include="ATSUI\qian\Search.aspx" />
     <Content Include="bootstrap\css\bootstrap-theme.css" />
     <Content Include="bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="bootstrap\css\bootstrap.css" />
@@ -92,11 +94,11 @@
     <Compile Include="ATSEntity\Job.cs" />
     <Compile Include="ATSEntity\Study.cs" />
     <Compile Include="ATSEntity\Work.cs" />
-    <Compile Include="ATSUI\Apply.aspx.cs">
+    <Compile Include="ATSUI\qian\Apply.aspx.cs">
       <DependentUpon>Apply.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ATSUI\Apply.aspx.designer.cs">
+    <Compile Include="ATSUI\qian\Apply.aspx.designer.cs">
       <DependentUpon>Apply.aspx</DependentUpon>
     </Compile>
     <Compile Include="ATSUI\Job.aspx.cs">
@@ -105,6 +107,20 @@
     </Compile>
     <Compile Include="ATSUI\Job.aspx.designer.cs">
       <DependentUpon>Job.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ATSUI\qian\Recruit.aspx.cs">
+      <DependentUpon>Recruit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ATSUI\qian\Recruit.aspx.designer.cs">
+      <DependentUpon>Recruit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ATSUI\qian\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ATSUI\qian\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="test.aspx.cs">
@@ -139,7 +155,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
