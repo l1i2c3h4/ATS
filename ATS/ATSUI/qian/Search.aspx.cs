@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +12,11 @@ namespace ATS.ATSUI.qian
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button_Search_Click(object sender, EventArgs e)
+        {
+            Table_chaxun.Visible = true;
         }
     }
 }

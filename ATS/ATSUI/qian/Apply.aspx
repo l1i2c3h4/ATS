@@ -6,9 +6,9 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>简历填写页面</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 引入 Bootstrap -->
-    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
     <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
@@ -314,7 +314,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Adjust">是否服从调剂</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="Adjust">是否服从调剂</label><span style="color: red; font-size: large;"> *
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DropDownList_Adjust" runat="server" ErrorMessage="是否服从调剂不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
                         <asp:DropDownList ID="DropDownList_Adjust" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
                             <asp:ListItem></asp:ListItem>
