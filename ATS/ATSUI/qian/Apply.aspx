@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="IDCard">身份证号</label><span style="color: red; font-size: large;"> * 
+                    <label class="control-label col-md-2" for="IDCard">身份证号</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator_IDCard" ControlToValidate="TextBox_IDCard" runat="server" ErrorMessage="身份证号不能为空"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator_IDCard" runat="server" ValidationExpression="(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$)" ControlToValidate="TextBox_IDCard" ErrorMessage="请输入正确的身份证号"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
@@ -167,7 +167,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="DateOfBirth">出生日期</label><span style="color: red; font-size: large;"> * 
+                    <label class="control-label col-md-2" for="DateOfBirth">出生日期</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator_DateOfBirth" ControlToValidate="TextBox_DateOfBirth" runat="server" ErrorMessage="出生日期不能为空"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator_DateOfBirth" runat="server" ValidationExpression="((?!0000)[0-9]{4}-((0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-8])|(0[13-9]|1[0-2])-(29|30)|(0[13578]|1[02])-31)|([0-9]{2}(0[48]|[2468][048]|[13579][26])|(0[48]|[2468][048]|[13579][26])00)-02-29)" ControlToValidate="TextBox_DateOfBirth" ErrorMessage="请输入正确的出生日期如1989-01-01"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
@@ -245,7 +245,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Email">电子邮箱</label><span style="color: red; font-size: large;"> *
+                    <label class="control-label col-md-2" for="Email">电子邮箱</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator_Email" ControlToValidate="TextBox_Email" runat="server" ErrorMessage="电子邮件不能为空"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator_Email" runat="server" ValidationExpression="^\s*([A-Za-z0-9_-]+(\.\w+)*@(\w+\.)+\w{2,5})\s*$" ControlToValidate="TextBox_Email" ErrorMessage="请输入正确的电子邮件"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
@@ -255,7 +255,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="phone">联系方式</label><span style="color: red; font-size: large;"> *
+                    <label class="control-label col-md-2" for="phone">联系方式</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator_phone" ControlToValidate="TextBox_phone" runat="server" ErrorMessage="联系方式不能为空"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator_phone" runat="server" ValidationExpression="^1(3|4|5|7|8|9)\d{9}$" ControlToValidate="TextBox_phone" ErrorMessage="请输入正确的手机号"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
