@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
@@ -28,6 +28,7 @@ namespace ATS.ATSDLL
             }
             return table;
         }
+       
         /// <summary>
         /// 删除选定的招聘职业
         /// </summary>
@@ -52,6 +53,12 @@ namespace ATS.ATSDLL
             DbCommand command = db.GetSqlStringCommond(sql);
             db.AddInParameter(command, "@job", DbType.String, job);
             db.ExecuteNonQuery(command);
+        }
+
+
+        public static void SearchName(string ID)
+        {
+            string sql = "select name from baseInformation where IDCard = " + ID;
         }
     }
 }

@@ -93,6 +93,7 @@
     <Compile Include="ATSDLL\SqlHelper.cs" />
     <Compile Include="ATSEntity\baseInfomation.cs" />
     <Compile Include="ATSEntity\Family.cs" />
+    <Compile Include="ATSEntity\Handle.cs" />
     <Compile Include="ATSEntity\Job.cs" />
     <Compile Include="ATSEntity\Study.cs" />
     <Compile Include="ATSEntity\Work.cs" />

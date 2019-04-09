@@ -47,11 +47,11 @@
                 <tr>
                     <th>姓名</th>
                     <td>
-                        <asp:Label ID="Label_Name" runat="server" Text="测试"></asp:Label>
+                        <asp:Label ID="Label_Name" runat="server" Text="无"></asp:Label>
                     </td>
                     <th>应聘编号</th>
                     <td>
-                        <asp:Label ID="Label_ApplyNumber" runat="server" Text="123456"></asp:Label></td>
+                        <asp:Label ID="Label_ApplyNumber" runat="server" Text="无"></asp:Label></td>
                 </tr>
                 <tr>
                     <th>求职意向</th>

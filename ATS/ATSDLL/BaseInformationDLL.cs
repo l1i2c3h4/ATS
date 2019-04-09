@@ -114,7 +114,14 @@ namespace ATS.ATSDLL
             db.AddInParameter(command, "@applyNumber", DbType.Int32, b.ApplyNumber);
             db.ExecuteNonQuery(command);
         }
-
+        
+        /// <summary>
+        /// 如果不是首次提交，就更新原有的信息
+        /// </summary>
+        /// <param name="b"></param>
+        /// <param name="f"></param>
+        /// <param name="s"></param>
+        /// <param name="w"></param>
         public static void UpdateBase(BaseInfomation b, Family f, Study s, Work w)
         {
             string sql = "update baseinformation set " +
