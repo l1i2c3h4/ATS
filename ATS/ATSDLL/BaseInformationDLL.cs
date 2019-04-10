@@ -12,7 +12,7 @@ namespace ATS.ATSDLL
     public static class BaseInformationDLL
     {
         
-        public static int SearchIDNumber(string IDCard)
+        public static int SearchIDNumber(int IDCard)
         {
 
             using (SqlHelper db = new SqlHelper())
@@ -37,7 +37,7 @@ namespace ATS.ATSDLL
         /// </summary>
         /// <param name="b"></param>
         /// <returns></returns>
-        public static int SearchBase(string IDCard)
+        public static int SearchBase(int IDCard)
         {
             using (SqlHelper db = new SqlHelper())
             {
@@ -72,10 +72,10 @@ namespace ATS.ATSDLL
             SqlHelper db = new SqlHelper();
             DbCommand command = db.GetSqlStringCommond(sql);
             db.AddInParameter(command, "@name", DbType.String, b.Name);
-            db.AddInParameter(command, "@IDCard", DbType.String, b.IDCare);
+            db.AddInParameter(command, "@IDCard", DbType.Int32, b.IDCare);
             db.AddInParameter(command, "@gender", DbType.String, b.Gender);
             db.AddInParameter(command, "@dateOfBirth", DbType.String, b.DateOfBirth);
-            db.AddInParameter(command, "@maritalStatus", DbType.String, b.IDCare);
+            db.AddInParameter(command, "@maritalStatus", DbType.String, b.MaritalStatus);
             db.AddInParameter(command, "@politicalStatus", DbType.String, b.PoliticalStatus);
             db.AddInParameter(command, "@nativePlace", DbType.String, b.NativePlace);
             db.AddInParameter(command, "@height", DbType.String, b.Height);
@@ -152,10 +152,10 @@ namespace ATS.ATSDLL
             SqlHelper db = new SqlHelper();
             DbCommand command = db.GetSqlStringCommond(sql);
             db.AddInParameter(command, "@name", DbType.String, b.Name);
-            db.AddInParameter(command, "@IDCard", DbType.String, b.IDCare);
+            db.AddInParameter(command, "@IDCard", DbType.Int32, b.IDCare);
             db.AddInParameter(command, "@gender", DbType.String, b.Gender);
             db.AddInParameter(command, "@dateOfBirth", DbType.String, b.DateOfBirth);
-            db.AddInParameter(command, "@maritalStatus", DbType.String, b.IDCare);
+            db.AddInParameter(command, "@maritalStatus", DbType.String, b.MaritalStatus);
             db.AddInParameter(command, "@politicalStatus", DbType.String, b.PoliticalStatus);
             db.AddInParameter(command, "@nativePlace", DbType.String, b.NativePlace);
             db.AddInParameter(command, "@height", DbType.String, b.Height);

@@ -13,7 +13,7 @@ namespace ATSEntity
     {
         public int IDNumber { get; set; }
         public string Name { get; set; }
-        public string IDCare { get; set; }
+        public int IDCare { get; set; }
         public string Gender { get; set; }
         public string DateOfBirth { get; set; }
         public string MaritalStatus { get; set; }
