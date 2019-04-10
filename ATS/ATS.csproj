@@ -87,11 +87,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ATSBLL\BaseInformationBLL.cs" />
+    <Compile Include="ATSBLL\HandleBLL.cs" />
     <Compile Include="ATSBLL\JobBLL.cs" />
     <Compile Include="ATSDLL\BaseInformationDLL.cs" />
+    <Compile Include="ATSDLL\HandleDLL.cs" />
     <Compile Include="ATSDLL\JobDLL.cs" />
     <Compile Include="ATSDLL\SqlHelper.cs" />
-    <Compile Include="ATSEntity\baseInfomation.cs" />
+    <Compile Include="ATSEntity\BaseInformation.cs" />
     <Compile Include="ATSEntity\Family.cs" />
     <Compile Include="ATSEntity\Handle.cs" />
     <Compile Include="ATSEntity\Job.cs" />

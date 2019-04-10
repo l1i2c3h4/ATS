@@ -56,9 +56,8 @@ namespace ATS.ATSDLL
         }
 
 
-        public static void SearchName(string ID)
-        {
-            string sql = "select name from baseInformation where IDCard = " + ID;
-        }
+     
+
+
     }
 }

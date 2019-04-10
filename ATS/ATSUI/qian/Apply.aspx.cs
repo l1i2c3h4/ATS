@@ -25,7 +25,7 @@ namespace ATS.ATSUI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            BaseInfomation b = new BaseInfomation();
+            BaseInformation b = new BaseInformation();
             Family f = new Family();
             Job j = new Job();
             Study s = new Study();

@@ -12,12 +12,24 @@ namespace ATS.ATSDLL
     public static class BaseInformationDLL
     {
         
-        public static int SearchIDNumber(BaseInfomation b)
+        public static int SearchIDNumber(string IDCard)
         {
-            string sql = "select IDNumber from baseInformation where IDCard = " + b.IDCare;
-            SqlHelper db = new SqlHelper();
-            DbCommand dbCommand = db.GetSqlStringCommond(sql);
-            return Convert.ToInt32(db.ExecuteScalar(dbCommand));
+
+            using (SqlHelper db = new SqlHelper())
+            {
+                string sql = "select IDNumber from baseInformation where IDCard = @IDCard";
+                using (DbCommand command = db.GetSqlStringCommond(sql))
+                {
+                    db.AddInParameter(command, "@IDCard", DbType.Int32, IDCard);
+                    using (DbDataReader reader = db.ExecuteReader(command))
+                    {
+                        //将从数据库读取的数据转换成BaseInfomation类的实例
+                        if (!reader.Read())
+                            return 0;
+                        return Convert.ToInt32(reader["IDNumber"]);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -25,12 +37,23 @@ namespace ATS.ATSDLL
         /// </summary>
         /// <param name="b"></param>
         /// <returns></returns>
-        public static int SearchBase(BaseInfomation b)
+        public static int SearchBase(string IDCard)
         {
-            string sql = "select applyNumber from baseInformation where IDCard = " + b.IDCare;
-            SqlHelper db = new SqlHelper();
-            DbCommand dbCommand = db.GetSqlStringCommond(sql);
-            return Convert.ToInt32(db.ExecuteScalar(dbCommand));
+            using (SqlHelper db = new SqlHelper())
+            {
+                string sql = "select applyNumber from baseInformation where IDCard = @IDCard";
+                using (DbCommand command = db.GetSqlStringCommond(sql))
+                {
+                    db.AddInParameter(command, "@IDCard", DbType.Int32, IDCard);
+                    using (DbDataReader reader = db.ExecuteReader(command))
+                    {
+                        //将从数据库读取的数据转换成BaseInfomation类的实例
+                        if (!reader.Read())
+                            return 0;
+                        return Convert.ToInt32(reader["applyNumber"]);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -40,7 +63,7 @@ namespace ATS.ATSDLL
         /// <param name="f"></param>
         /// <param name="s"></param>
         /// <param name="w"></param>
-        public static void AddBaseInformation(BaseInfomation b, Family f, Study s, Work w)
+        public static void AddBaseInformation(BaseInformation b, Family f, Study s, Work w)
         {
             //string sql = "insert into baseinformation(name) values(@name)";
             string sql = "insert into baseinformation(" +
@@ -122,7 +145,7 @@ namespace ATS.ATSDLL
         /// <param name="f"></param>
         /// <param name="s"></param>
         /// <param name="w"></param>
-        public static void UpdateBase(BaseInfomation b, Family f, Study s, Work w)
+        public static void UpdateBase(BaseInformation b, Family f, Study s, Work w)
         {
             string sql = "update baseinformation set " +
                 "name=@name, gender=@gender, dateOfBirth=@dateOfBirth, maritalStatus=@maritalStatus, politicalStatus=@politicalStatus, nativePlace=@nativePlace, height=@height, weight=@weight, communicableDisease=@communicableDisease, achromatopsia=@achromatopsia, EstimatedTime=@EstimatedTime, Email=@Email, phone=@phone, address=@address, firstChoice=@firstChoice, secondChoice=@secondChoice, adjust=@adjust, workBeginTime01=@workBeginTime01, workEndTime01=@workEndTime01, workPlace01=@workPlace01, workJob01=@workJob01,workBeginTime02=@workBeginTime02, workEndTime02=@workEndTime02, workPlace02=@workPlace02, workJob02=@workJob02, workBeginTime03=@workBeginTime03, workEndTime03=@workEndTime03, workPlace03=@workPlace03, workJob03=@workJob03, workPerformance=@workPerformance, studyBeginTime01=@studyBeginTime01, studyEndTime01=@studyEndTime01, studyPlace01=@studyPlace01, studyMajor01=@studyMajor01, studyBeginTime02=@studyBeginTime02, studyEndTime02=@studyEndTime02, studyPlace02=@studyPlace02, studyMajor02=@studyMajor02, studyBeginTime03=@studyBeginTime03, studyEndTime03=@studyEndTime03, studyPlace03=@studyPlace03, studyMajor03=@studyMajor03, studyEnglish=@studyEnglish, studyConputer=@studyConputer, studyOther=@studyOther, studyPerformance=@studyPerformance, familyRelationship01=@familyRelationship01, familyName01=@familyName01, familyAge01=@familyAge01, familyPlace01=@familyPlace01, familyJob01=@familyJob01, familyRelationship02=@familyRelationship02, familyName02=@familyName02, familyAge02=@familyAge02, familyPlace02=@familyPlace02, familyJob02=@familyJob02, familyRelationship03=@familyRelationship03, familyName03=@familyName03, familyAge03=@familyAge03, familyPlace03=@familyPlace03, familyJob03=@familyJob03,time=@time,applyNumber=@applyNumber where IDCard=@IDCard";
@@ -193,6 +216,37 @@ namespace ATS.ATSDLL
             db.AddInParameter(command, "@time", DbType.String, DateTime.Now.ToString());
             db.AddInParameter(command, "@applyNumber", DbType.Int32, b.ApplyNumber);
             db.ExecuteNonQuery(command);
+        }
+        
+        /// <summary>
+        /// 查询基本信息
+        /// </summary>
+        /// <param name="IDCard"></param>
+        /// <returns></returns>
+        public static BaseInformation SearchALL(string IDCard)
+        {
+            BaseInformation baseInformation = null;
+
+            using (SqlHelper db = new SqlHelper())
+            {
+                string sql = "select name,IDNumber,firstChoice,secondChoice from baseInformation where IDCard = @IDCard";
+                using (DbCommand command = db.GetSqlStringCommond(sql))
+                {
+                    db.AddInParameter(command, "@IDCard", DbType.String, IDCard);
+                    using (DbDataReader reader = db.ExecuteReader(command))
+                    {
+                        //将从数据库读取的数据转换成BaseInfomation类的实例
+                        while (reader.Read())
+                             
+                        baseInformation = new BaseInformation();
+                        baseInformation.Name = reader["name"].ToString();
+                        baseInformation.IDNumber = Convert.ToInt32(reader["IDNumber"].ToString());
+                        baseInformation.FirstChoice = reader["firstChoice"].ToString();
+                        baseInformation.SecondChoice = reader["secondChoice"].ToString();
+                    }
+                }
+            }
+            return baseInformation;
         }
     }
 }

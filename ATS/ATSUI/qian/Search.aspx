@@ -22,9 +22,9 @@
         <div class="form-group">
             <div class="col-md-12">
                 <h2 style="font-family: 'KaiTi','Times New Roman', Times, serif">欢迎查询应聘状态</h2>
-                <p>请输入您的身份证号查询：</p>
+                <!--<p>请输入您的身份证号查询：</p>
                 <label>应聘编号</label>
-                <asp:TextBox ID="TextBox_searchIDNumber" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox_searchIDNumber" runat="server"></asp:TextBox>-->
             </div>
         </div>
         <div class="form-group">
@@ -47,16 +47,16 @@
                 <tr>
                     <th>姓名</th>
                     <td>
-                        <asp:Label ID="Label_Name" runat="server" Text="无"></asp:Label>
+                        <asp:Label ID="Label_Name" runat="server" Text=""></asp:Label>
                     </td>
                     <th>应聘编号</th>
                     <td>
-                        <asp:Label ID="Label_ApplyNumber" runat="server" Text="无"></asp:Label></td>
+                        <asp:Label ID="Label_ApplyNumber" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
                     <th>求职意向</th>
                     <td colspan="3">
-                        <asp:Label ID="Label_job" runat="server" Text="无"></asp:Label></td>
+                        <asp:Label ID="Label_job" runat="server" Text=""></asp:Label></td>
 
                 </tr>
                 <tr>
@@ -66,12 +66,12 @@
                 <tr>
                     <th>资格审查/简历筛选</th>
                     <td colspan="3">
-                        <asp:Label ID="Label_resume" runat="server" Text="未处理"></asp:Label></td>
+                        <asp:Label ID="Label_resume" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
                     <th>考核状态</th>
                     <td colspan="3">
-                        <asp:Label ID="Label_interview" runat="server" Text="未处理"></asp:Label></td>
+                        <asp:Label ID="Label_interview" runat="server" Text=""></asp:Label></td>
                 </tr>
                 <tr>
                     <th colspan="4" style="text-align: center">当前通知

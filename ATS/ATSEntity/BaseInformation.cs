@@ -9,7 +9,7 @@ namespace ATSEntity
     /// <summary>
     /// 招聘人员基本信息
     /// </summary>
-    public class BaseInfomation
+    public class BaseInformation
     {
         public int IDNumber { get; set; }
         public string Name { get; set; }

@@ -9,10 +9,10 @@ namespace ATS.ATSBLL
 {
     public static class BaseInformationBLL
     {
-        public static int AddBaseInformation(BaseInfomation b, Family f, Study s, Work w)
+        public static int AddBaseInformation(BaseInformation b, Family f, Study s, Work w)
         {
 
-            int i = BaseInformationDLL.SearchBase(b);
+            int i = BaseInformationDLL.SearchBase(b.IDCare);
 
             if (i == 0)
             {
@@ -27,7 +27,11 @@ namespace ATS.ATSBLL
                 BaseInformationDLL.UpdateBase(b, f, s, w);
             }
 
-            return BaseInformationDLL.SearchIDNumber(b);
+            int IDNumber = BaseInformationDLL.SearchIDNumber(b.IDCare);
+
+            HandleDLL.AddHandle(IDNumber);
+
+            return IDNumber;
         }
     }
 }
