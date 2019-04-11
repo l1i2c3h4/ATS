@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace ATS.ATSUI.qian
 {
     public partial class Search : System.Web.UI.Page
@@ -17,6 +18,7 @@ namespace ATS.ATSUI.qian
         protected void Button_Search_Click(object sender, EventArgs e)
         {
             Table_chaxun.Visible = true;
+            AdCreatedEventHandler 
         }
     }
 }

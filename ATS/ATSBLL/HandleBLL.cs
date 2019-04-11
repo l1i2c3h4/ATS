@@ -12,8 +12,9 @@ namespace ATS.ATSBLL
         public static Handle SearchAll(int IDCard)
         {
             Handle handle = null;
-            int IDNumber = 
-            handle = HandleDLL.SearchAll()
+            int IDNumber = BaseInformationDLL.SearchIDNumber(IDCard);
+            handle = HandleDLL.SearchAll(IDNumber);
+            return handle;
         }
     }
 }
