@@ -13,11 +13,14 @@ namespace ATS.ATSBLL
         {
 
             int i = BaseInformationDLL.SearchBase(b.IDCare);
+            int IDNumber = BaseInformationDLL.SearchIDNumber(b.IDCare);
 
             if (i == 0)
             {
                 b.ApplyNumber = 1;
                 BaseInformationDLL.AddBaseInformation(b, f, s, w);
+
+                HandleDLL.AddHandle(IDNumber);
             }
 
             else
@@ -27,11 +30,13 @@ namespace ATS.ATSBLL
                 BaseInformationDLL.UpdateBase(b, f, s, w);
             }
 
-            int IDNumber = BaseInformationDLL.SearchIDNumber(b.IDCare);
-
-            HandleDLL.AddHandle(IDNumber);
 
             return IDNumber;
+        }
+
+        public static BaseInformation SearchAll(string IDCard)
+        {
+            return BaseInformationDLL.SearchALL(IDCard);
         }
     }
 }

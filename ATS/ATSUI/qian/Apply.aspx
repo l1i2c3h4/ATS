@@ -72,7 +72,7 @@
 
                 <h3><b>基本情况</b></h3>
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Name">姓名</label><span style="color: red; font-size: large;"> * 
+                    <label class="control-label col-md-2" for="Name">姓名</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator_name" ControlToValidate="TextBox_Name" runat="server" ErrorMessage="姓名不能为空"></asp:RequiredFieldValidator>
                     </span>
                     <div class="col-md-4">
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Gender">性别</label><span style="color: red; font-size: large;"> *
+                    <label class="control-label col-md-2" for="Gender">性别</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator_Gender" ControlToValidate="DropDownList_Gender" runat="server" ErrorMessage="性别不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
                         <asp:DropDownList ID="DropDownList_Gender" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
@@ -159,7 +159,7 @@
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="IDCard">身份证号</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_IDCard" ControlToValidate="TextBox_IDCard" runat="server" ErrorMessage="身份证号不能为空"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_IDCard" ControlToValidate="TextBox_IDCard" runat="server" ErrorMessage="身份证号不能为空" Display="None"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator_IDCard" runat="server" ValidationExpression="(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$)" ControlToValidate="TextBox_IDCard" ErrorMessage="请输入正确的身份证号"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_IDCard" class="form-control" runat="server"></asp:TextBox>
@@ -169,8 +169,8 @@
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="DateOfBirth">出生日期</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_DateOfBirth" ControlToValidate="TextBox_DateOfBirth" runat="server" ErrorMessage="出生日期不能为空"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator_DateOfBirth" runat="server" ValidationExpression="((?!0000)[0-9]{4}-((0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-8])|(0[13-9]|1[0-2])-(29|30)|(0[13578]|1[02])-31)|([0-9]{2}(0[48]|[2468][048]|[13579][26])|(0[48]|[2468][048]|[13579][26])00)-02-29)" ControlToValidate="TextBox_DateOfBirth" ErrorMessage="请输入正确的出生日期如1989-01-01"></asp:RegularExpressionValidator></span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_DateOfBirth" ControlToValidate="TextBox_DateOfBirth" runat="server" ErrorMessage="出生日期不能为空" Display="None"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator_DateOfBirth" runat="server" ValidationExpression="((?!0000)[0-9]{4}-((0[1-9]|1[0-2])-(0[1-9]|1[0-9]|2[0-8])|(0[13-9]|1[0-2])-(29|30)|(0[13578]|1[02])-31)|([0-9]{2}(0[48]|[2468][048]|[13579][26])|(0[48]|[2468][048]|[13579][26])00)-02-29)" ControlToValidate="TextBox_DateOfBirth" Text="请按此格式输入1989-01-01" ErrorMessage="请输入正确的出生日期如1989-01-01"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_DateOfBirth" class="form-control" runat="server"></asp:TextBox>
 
@@ -178,7 +178,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="MaritalStatus">婚姻状况</label><span style="color: red; font-size: large;"> *
+                    <label class="control-label col-md-2" for="MaritalStatus">婚姻状况</label><span style="color: red; font-size: large;"> * 
                     </span>
                     <div class="col-md-4">
                         <asp:DropDownList ID="DropDownList_MaritalStatus" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
@@ -190,7 +190,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="PoliticalStatus">政治面貌</label><span style="color: red; font-size: large;"> *</span>
+                    <label class="control-label col-md-2" for="PoliticalStatus">政治面貌</label><span style="color: red; font-size: large;"> * </span>
                     <div class="col-md-4">
                         <asp:DropDownList ID="DropDownList_PoliticalStatus" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
                             <asp:ListItem Text="中共党员" Value="中共党员"></asp:ListItem>
@@ -220,7 +220,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Weight">体重（KG）</label><span style="color: red; font-size: large;"> *
+                    <label class="control-label col-md-2" for="Weight">体重（KG）</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RangeValidator ID="RangeValidator_Weight" runat="server" ErrorMessage="请输入整数的体重值" ControlToValidate="TextBox_Weight" MaximumValue="200" MinimumValue="1" Type="Integer" EnableClientScript="False"></asp:RangeValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_Weight" class="form-control" runat="server"></asp:TextBox>
@@ -228,7 +228,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="NaticePlace">籍贯</label><span style="color: red; font-size: large;"> *
+                    <label class="control-label col-md-2" for="NaticePlace">籍贯</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator_NaticePlace" ControlToValidate="TextBox_NaticePlace" runat="server" ErrorMessage="籍贯不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_NaticePlace" class="form-control" runat="server"></asp:TextBox>
@@ -237,7 +237,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Address">住址</label><span style="color: red; font-size: large;"> *
+                    <label class="control-label col-md-2" for="Address">住址</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator_Address" ControlToValidate="TextBox_Address" runat="server" ErrorMessage="住址不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_Address" class="form-control" runat="server"></asp:TextBox>
@@ -247,7 +247,7 @@
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="Email">电子邮箱</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_Email" ControlToValidate="TextBox_Email" runat="server" ErrorMessage="电子邮件不能为空"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_Email" ControlToValidate="TextBox_Email" runat="server" ErrorMessage="电子邮件不能为空" Display="None"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator_Email" runat="server" ValidationExpression="^\s*([A-Za-z0-9_-]+(\.\w+)*@(\w+\.)+\w{2,5})\s*$" ControlToValidate="TextBox_Email" ErrorMessage="请输入正确的电子邮件"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_Email" class="form-control" runat="server"></asp:TextBox>
@@ -257,7 +257,7 @@
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="phone">联系方式</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_phone" ControlToValidate="TextBox_phone" runat="server" ErrorMessage="联系方式不能为空"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_phone" ControlToValidate="TextBox_phone" runat="server" ErrorMessage="联系方式不能为空" Display="None"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator_phone" runat="server" ValidationExpression="^1(3|4|5|7|8|9)\d{9}$" ControlToValidate="TextBox_phone" ErrorMessage="请输入正确的手机号"></asp:RegularExpressionValidator></span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_phone" class="form-control" runat="server"></asp:TextBox>
@@ -286,7 +286,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="EstimatedTime">预计可到岗时间</label><span style="color: red; font-size: large;"> *
+                    <label class="control-label col-md-2" for="EstimatedTime">预计可到岗时间</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator_EstimatedTime" ControlToValidate="DropDownList_EstimatedTime" runat="server" ErrorMessage="预计可到岗时间不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
                         <asp:DropDownList ID="DropDownList_EstimatedTime" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
@@ -315,7 +315,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2" for="Adjust">是否服从调剂</label><span style="color: red; font-size: large;"> *
+                    <label class="control-label col-md-2" for="Adjust">是否服从调剂</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DropDownList_Adjust" runat="server" ErrorMessage="是否服从调剂不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
                         <asp:DropDownList ID="DropDownList_Adjust" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
@@ -421,13 +421,13 @@
                         <ol>
                             <li>起始和截止时间精确到月份即可，具体格式如“2016-09”；</li>
                             <li>若该条学习经历还未结束，截止时间填写“至今”；</li>
-                            <li>请从最近的学习经历开始填写起，至少填写一条，最多填写3条。</li>
+                            <li>学习经历第一行为必填项，请从最近的学习经历开始填写起，至少填写一条，最多填写3条。</li>
                         </ol>
                     </div>
                 </div>
 
 
-                <h3><b>工作经历</b></h3>
+                <h3><b>学习经历</b></h3>
                 <div class="table-responsive">
                     <table border="1">
 
@@ -440,14 +440,19 @@
                         <tr>
                             <td>
                                 <asp:TextBox ID="TextBox_studyBeginTime01" class="form-control" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_TextBox_studyBeginTime01" ControlToValidate="TextBox_studyBeginTime01" runat="server"  ErrorMessage="必填行学习经历起始时间未填写" Display="None"></asp:RequiredFieldValidator>
                             </td>
                             <td>
                                 <asp:TextBox ID="TextBox_studyEndTime01" class="form-control" runat="server"> </asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_TextBox_studyEndTime01" ControlToValidate="TextBox_studyEndTime01" runat="server"  ErrorMessage="必填行学习经历截止时间未填写" Display="None"></asp:RequiredFieldValidator>
                             </td>
                             <td>
                                 <asp:TextBox ID="TextBox_studyPlace01" class="form-control" runat="server"> </asp:TextBox></td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_TextBox_studyPlace01" ControlToValidate="TextBox_studyPlace01" runat="server"  ErrorMessage="必填行学习经历就读学校未填写" Display="None"></asp:RequiredFieldValidator>
+
                             <td>
                                 <asp:TextBox ID="TextBox_studyMajor01" class="form-control" runat="server"> </asp:TextBox></td>
+                             <asp:RequiredFieldValidator ID="RequiredFieldValidator_TextBox_studyMajor01" ControlToValidate="TextBox_studyMajor01" runat="server"  ErrorMessage="必填行学习经历专业未填写" Display="None"></asp:RequiredFieldValidator>
                         </tr>
                         <tr>
                             <td>
@@ -601,7 +606,7 @@
 
                     <br />
                     <br />
-                    <asp:Button ID="Button1" runat="server" class="btn btn-primary btn-lg col-md-2 col-md-offset-4" Text="提交简历" OnClick="Button1_Click" />
+                    <asp:Button ID="Button1" runat="server" class="btn btn-primary btn-lg btn-block" Text="提交简历" OnClick="Button1_Click" />
                     <br />
                     <br />
                     <br />

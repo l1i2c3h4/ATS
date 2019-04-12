@@ -30,7 +30,9 @@
         <div class="form-group">
             <div class="col-md-12">
                 <label>身份证号</label>
-                <asp:TextBox ID="TextBox_searchIDCard" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox_searchIDCard" runat="server"></asp:TextBox><span style="color: red; font-size: large;"> * </span><span style="color: red">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_IDCard" ControlToValidate="TextBox_searchIDCard" runat="server" ErrorMessage="身份证号不能为空"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator_IDCard" runat="server" ValidationExpression="(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$)" ControlToValidate="TextBox_searchIDCard" ErrorMessage="请输入正确的身份证号"></asp:RegularExpressionValidator></span>
             </div>
         </div>
 
@@ -42,6 +44,12 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <div class="col-md-12">
+                <asp:Label ID="Label_Information" runat="server" ForeColor="Red" visible="false" Text=""></asp:Label>
+                <br />
+            </div>
+        </div>
         <div class="col-md-12">
             <table id="Table_chaxun" class="table table-bordered table-condensed" runat="server" visible="false">
                 <tr>
@@ -51,12 +59,18 @@
                     </td>
                     <th>应聘编号</th>
                     <td>
-                        <asp:Label ID="Label_ApplyNumber" runat="server" Text=""></asp:Label></td>
+                        <asp:Label ID="Label_IDNumber" runat="server"></asp:Label></td>
                 </tr>
                 <tr>
-                    <th>求职意向</th>
+                    <th>求职第一志愿</th>
                     <td colspan="3">
-                        <asp:Label ID="Label_job" runat="server" Text=""></asp:Label></td>
+                        <asp:Label ID="Label_First" runat="server" Text=""></asp:Label></td>
+
+                </tr>
+                 <tr>
+                    <th>求职第二志愿</th>
+                    <td colspan="3">
+                        <asp:Label ID="Label_Second" runat="server" Text=""></asp:Label></td>
 
                 </tr>
                 <tr>

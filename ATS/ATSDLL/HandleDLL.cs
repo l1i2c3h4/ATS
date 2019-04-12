@@ -26,6 +26,7 @@ namespace ATS.ATSDLL
                 using (DbCommand command = db.GetSqlStringCommond(sql))
                 {
                     db.AddInParameter(command, "@IDNumber", DbType.String, IDNumber);
+                    db.ExecuteNonQuery(command);
                 }
             }
         }

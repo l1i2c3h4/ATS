@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ATSUI\qian\Apply.aspx" />
-    <Content Include="ATSUI\Job.aspx" />
+    <Content Include="ATSUI\hou\Job.aspx" />
     <Content Include="ATSUI\qian\Recruit.aspx" />
     <Content Include="ATSUI\qian\Search.aspx" />
     <Content Include="bootstrap\css\bootstrap-theme.css" />
@@ -106,11 +106,11 @@
     <Compile Include="ATSUI\qian\Apply.aspx.designer.cs">
       <DependentUpon>Apply.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ATSUI\Job.aspx.cs">
+    <Compile Include="ATSUI\hou\Job.aspx.cs">
       <DependentUpon>Job.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ATSUI\Job.aspx.designer.cs">
+    <Compile Include="ATSUI\hou\Job.aspx.designer.cs">
       <DependentUpon>Job.aspx</DependentUpon>
     </Compile>
     <Compile Include="ATSUI\qian\Recruit.aspx.cs">

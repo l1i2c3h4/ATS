@@ -40,6 +40,24 @@ namespace ATS.ATSUI.qian {
         protected global::System.Web.UI.WebControls.TextBox TextBox_searchIDCard;
         
         /// <summary>
+        /// RequiredFieldValidator_IDCard 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_IDCard;
+        
+        /// <summary>
+        /// RegularExpressionValidator_IDCard 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator_IDCard;
+        
+        /// <summary>
         /// Button_Search 控件。
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace ATS.ATSUI.qian {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_Search;
+        
+        /// <summary>
+        /// Label_Information 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Information;
         
         /// <summary>
         /// Table_chaxun 控件。
@@ -67,22 +94,31 @@ namespace ATS.ATSUI.qian {
         protected global::System.Web.UI.WebControls.Label Label_Name;
         
         /// <summary>
-        /// Label_ApplyNumber 控件。
+        /// Label_IDNumber 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_ApplyNumber;
+        protected global::System.Web.UI.WebControls.Label Label_IDNumber;
         
         /// <summary>
-        /// Label_job 控件。
+        /// Label_First 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_job;
+        protected global::System.Web.UI.WebControls.Label Label_First;
+        
+        /// <summary>
+        /// Label_Second 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Second;
         
         /// <summary>
         /// Label_resume 控件。
