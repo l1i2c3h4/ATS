@@ -16,34 +16,38 @@
          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
       <![endif]-->
+    <!--引入css-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+
+    <!--引入JavaScript-->
+    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+    <!--初始化代码-->
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
     <style type="text/css">
-        .auto-style1 {
-            display: block;
-            width: 100%;
-            height: 102px;
-            padding: 6px 12px;
-            font-size: 14px;
-            line-height: 1.42857143;
-            color: #555;
-            background-color: #fff;
-            background-image: none;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-        }
-    </style>
+	div ul li span{
+		color: blue;
+	}
+	div ul li p{
+		color: red;
+	}
+	</style>
 </head>
 <body>
-    <form class="form-horizontal container-fluid" role="form">
-        <div class="form-group">
-            <label for="lastname" class="col-sm-2 control-label">姓</label><input type="text" class="auto-style1" id="lastname" placeholder="请输入姓"/>
-            <div class="col-sm-10">
-                &nbsp;</div>
-        </div>
+   <form>
+       <div class="di">
+		<ul class="u">
+			<li class="l" title="t">
+				<p class="pp" title="t"><span>我是什么颜色？</span></p>
+			</li>
+		</ul>
+	</div>
     </form>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>

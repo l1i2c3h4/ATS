@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/test.aspx" title="home"  description="">
+    <siteMapNode url="~/ATSUI/hou/Job.aspx" title="招聘职位管理"  description="" />
+    <siteMapNode url="~/ATSUI/hou/RenLiHandle.aspx" title="招聘信息统计"  description="" />
+  </siteMapNode>
+</siteMap>

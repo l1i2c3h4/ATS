@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Masterhou.master.cs" Inherits="ATS.ATSUI.hou.Masterhou" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 引入 Bootstrap -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <div class="container col-md-12">
+        <img src="<%=ResolveUrl("~/data/logo.png") %>" class="img-rounded">
+    </div>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <table>
+                        <tr>
+                            <td class="col-md-2">
+                                <asp:TreeView ID="TreeView1" DataSourceID="SiteMapDataSource1" runat="server">
+                                </asp:TreeView>
+                            </td>
+                            <td class="col-md-10">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"/>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- 包括所有已编译的插件 -->
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    </form>
+</body>
+</html>
