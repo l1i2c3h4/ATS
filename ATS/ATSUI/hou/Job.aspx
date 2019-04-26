@@ -41,7 +41,7 @@
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField />
-                        <asp:BoundField DataField="worker" FooterText="岗位" HeaderText="岗位"></asp:BoundField>
+                        <asp:BoundField DataField="worker" HeaderText="岗位"></asp:BoundField>
                         <asp:CommandField ShowDeleteButton="True" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />

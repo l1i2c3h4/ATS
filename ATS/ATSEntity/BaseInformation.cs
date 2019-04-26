@@ -19,6 +19,7 @@ namespace ATSEntity
         public string MaritalStatus { get; set; }
         public string PoliticalStatus { get; set; }
         public string NativePlace { get; set; }
+        public string EducationalBackgrounp { get; set; } 
         public string Height { get; set; }
         public string Weight { get; set; }
         public string CommunicableDisease { get; set; }

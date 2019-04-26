@@ -202,6 +202,18 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="control-label col-md-2" for="EducationalBackgrounp">学历</label><span style="color: red; font-size: large;"> * </span>
+                    <div class="col-md-4">
+                        <asp:DropDownList ID="DropDownList_EducationalBackgrounp" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
+                            <asp:ListItem Text="小学" Value="小学"></asp:ListItem>
+                            <asp:ListItem Text="专科" Value="专科"></asp:ListItem>
+                            <asp:ListItem Text="本科" Value="本科" Selected="True"></asp:ListItem>
+                            <asp:ListItem Text="研究生" Value="研究生"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label class="control-label col-md-2" for="Height">身高</label><span style="color: red; font-size: large;"> *</span>
                     <div class="col-md-4">
                         <asp:DropDownList ID="DropDownList_Height" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
