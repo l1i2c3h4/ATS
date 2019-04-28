@@ -14,32 +14,13 @@ namespace ATS
         {
             if (!IsPostBack)
             {
-                BindGrid();
+              
             }
         }
 
-        private void BindGrid()
-        {
-            GridView1.DataSource = JobBLL.GetBynull();
-            GridView1.DataBind();
-        }
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            string key = e.Keys[0].ToString();
-            JobBLL.DeletedJob(key);
-            BindGrid();
-        }
+        
 
-        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            //只有数据行才有绑定数据
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                //由于是链接按钮所以声明一个链接按钮，根据实际情况变动
-                LinkButton lnkBtFalg = e.Row.Cells[1].Controls[0] as LinkButton;
-                lnkBtFalg.Attributes.Add("onclick", "javascrip:return confirm('您真要的删除吗!')");
-            }
-        }
+       
 
     }
 }

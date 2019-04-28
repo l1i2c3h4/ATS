@@ -1,5 +1,5 @@
 using ATS.ATSBLL;
-using ATSEntity;
+using ATS.ATSEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
-using ATSEntity;
+using ATS.ATSEntity;
 using System.Data.SqlClient;
 using System.Data.Common;
 
@@ -21,11 +21,13 @@ namespace ATS.ATSDLL
             {
                 //构建插入sql语句
                 string sql = "insert into handle "
-                    + " (IDNumber) "
-                    + " values(@IDNumber)";
+                    + " (IDNumber,resume,interview) "
+                    + " values(@IDNumber,@resume,@interview)";
                 using (DbCommand command = db.GetSqlStringCommond(sql))
                 {
-                    db.AddInParameter(command, "@IDNumber", DbType.String, IDNumber);
+                    db.AddInParameter(command, "@IDNumber", DbType.Int32, IDNumber);
+                    db.AddInParameter(command, "@resume", DbType.String, "未处理");
+                    db.AddInParameter(command, "@interview", DbType.String, "未处理");
                     db.ExecuteNonQuery(command);
                 }
             }

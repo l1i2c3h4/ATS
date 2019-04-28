@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ATSEntity;
+using ATS.ATSEntity;
 
 namespace ATS.ATSUI
 {
@@ -37,6 +37,7 @@ namespace ATS.ATSUI
             b.DateOfBirth = TextBox_DateOfBirth.Text;
             b.MaritalStatus = DropDownList_MaritalStatus.Text;
             b.PoliticalStatus = DropDownList_PoliticalStatus.Text;
+            b.EducationalBackgrounp = DropDownList_EducationalBackgrounp.Text;
             b.NativePlace = DropDownList_NativePlace.Text;
             b.Height = DropDownList_Height.Text;
             b.Weight = TextBox_Weight.Text;

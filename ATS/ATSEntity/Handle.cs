@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ATSEntity
+namespace ATS.ATSEntity
 {
     public class Handle
     {

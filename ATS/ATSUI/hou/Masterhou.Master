@@ -11,7 +11,9 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
+    <script type="text/javascript">
+        $(".form_datetime").datetimepicker({ format: 'yyyy-mm-dd hh:ii' });
+    </script>
 </head>
 <body>
     <div class="container col-md-12">
@@ -33,7 +35,7 @@
                             </td>
                         </tr>
                     </table>
-                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"/>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
                 </div>
             </div>
         </div>

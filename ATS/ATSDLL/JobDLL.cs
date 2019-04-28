@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Web;
-using ATSEntity;
+using ATS.ATSEntity;
 using System.Data;
 using System.Data.SqlClient;
 

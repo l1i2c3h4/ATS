@@ -1,4 +1,4 @@
-using ATSEntity;
+using ATS.ATSEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +13,12 @@ namespace ATS.ATSBLL
         {
 
             int i = BaseInformationDLL.SearchBase(b.IDCare);
-            int IDNumber = BaseInformationDLL.SearchIDNumber(b.IDCare);
-
+            int IDNumber = 0;
             if (i == 0)
             {
                 b.ApplyNumber = 1;
                 BaseInformationDLL.AddBaseInformation(b, f, s, w);
-
+                IDNumber = BaseInformationDLL.SearchIDNumber(b.IDCare);
                 HandleDLL.AddHandle(IDNumber);
             }
 
@@ -28,6 +27,7 @@ namespace ATS.ATSBLL
             {
                 b.ApplyNumber = i + 1;
                 BaseInformationDLL.UpdateBase(b, f, s, w);
+                IDNumber = BaseInformationDLL.SearchIDNumber(b.IDCare);
             }
 
 

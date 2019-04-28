@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATSEntity
+namespace ATS.ATSEntity
 {
     /// <summary>
     /// 招聘人员基本信息
@@ -36,3 +36,4 @@ namespace ATSEntity
 
     }
 }
+

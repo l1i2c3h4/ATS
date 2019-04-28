@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
-using ATSEntity;
+using ATS.ATSEntity;
 using System.Data.SqlClient;
 using System.Data.Common;
 
@@ -56,6 +56,7 @@ namespace ATS.ATSDLL
             }
         }
 
+       
         /// <summary>
         /// 首次提交添加一个新的应聘求职信息
         /// </summary>
@@ -223,7 +224,7 @@ namespace ATS.ATSDLL
                     db.AddInParameter(command, "@familyAge03", DbType.String, f.FamilyAge03);
                     db.AddInParameter(command, "@familyPlace03", DbType.String, f.FamilyPlace03);
                     db.AddInParameter(command, "@familyJob03", DbType.String, f.FamilyJob03);
-                    db.AddInParameter(command, "@time", DbType.String, DateTime.Now.ToString());
+                    db.AddInParameter(command, "@time", DbType.DateTime, DateTime.Now.ToString());
                     db.AddInParameter(command, "@applyNumber", DbType.Int32, b.ApplyNumber);
                     db.ExecuteNonQuery(command);
                 }
@@ -261,6 +262,17 @@ namespace ATS.ATSDLL
                 }
             }
             return baseInformation;
+        }
+
+        public static BaseView SearchView(string IDCard)
+        {
+            BaseView baseView = null;
+
+            using (SqlHelper db = new SqlHelper())
+            {
+                string sql = "";
+            }
+            return baseView;
         }
     }
 }
