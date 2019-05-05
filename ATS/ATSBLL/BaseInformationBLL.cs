@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ATS.ATSDLL;
+using System.Data;
 
 namespace ATS.ATSBLL
 {
@@ -37,6 +38,17 @@ namespace ATS.ATSBLL
         public static BaseInformation SearchAll(string IDCard)
         {
             return BaseInformationDLL.SearchALL(IDCard);
+        }
+
+        public static DataTable SearchView(string beginTime, string endTime,string sortField, string des)
+        {
+            return BaseInformationDLL.SearchView(beginTime, endTime, sortField, des);
+        }
+
+        public static void deletBaseInformation(string IDNumber)
+        {
+            HandleDLL.Delethandle(IDNumber);
+            BaseInformationDLL.DeletBaseInformation(IDNumber);
         }
     }
 }

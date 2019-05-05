@@ -264,15 +264,42 @@ namespace ATS.ATSDLL
             return baseInformation;
         }
 
-        public static BaseView SearchView(string IDCard)
+        public static DataTable SearchView(string beginTime,string endTime,string sortField,string sort)
         {
-            BaseView baseView = null;
-
             using (SqlHelper db = new SqlHelper())
             {
-                string sql = "";
+                string sql = "select baseInformation.IDNumber,IDCard,name,resume,interview,educationalBackgrounp,phone,address,firstChoice,secondChoice,adjust from baseInformation,handle where baseInformation.IDNumber = handle.IDNumber and baseInformation.time between @beginTime and @endTime";
+                if (!string.IsNullOrEmpty(sortField))
+                {
+                    sql += " order by " + sortField + " " + sort;
+                   
+                }
+
+
+                using (DbCommand command = db.GetSqlStringCommond(sql))
+                {
+                    db.AddInParameter(command, "@beginTime", DbType.DateTime, beginTime);
+                    db.AddInParameter(command, "@endTime", DbType.DateTime, endTime);
+                    using (DataTable table = db.ExecuteDataTable(command))
+                    {
+                        return table;
+                    }
+                }
             }
-            return baseView;
+        }
+
+        public static void DeletBaseInformation(string IDNumber)
+        {
+            using (SqlHelper db = new SqlHelper())
+            {
+                string sql = "delete from baseInformation where IDNumber=@IDNumber";
+                using (DbCommand command = db.GetSqlStringCommond(sql))
+                {
+                    db.AddInParameter(command, "@IDNumber", DbType.String, IDNumber);
+                    db.ExecuteReader(command);
+                }
+
+            }
         }
     }
 }

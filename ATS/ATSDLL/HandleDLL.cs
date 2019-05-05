@@ -64,5 +64,19 @@ namespace ATS.ATSDLL
             return handle;
         }
 
+        public static void Delethandle(string IDNumber)
+        {
+            using (SqlHelper db = new SqlHelper())
+            {
+                string sql = "delete from handle where IDNumber=@IDNumber";
+                using (DbCommand command = db.GetSqlStringCommond(sql))
+                {
+                    db.AddInParameter(command, "@IDNumber", DbType.String, IDNumber);
+                    db.ExecuteReader(command);
+                }
+
+            }
+        }
+
     }
 }

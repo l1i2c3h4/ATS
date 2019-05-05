@@ -13,24 +13,6 @@ namespace ATS.ATSUI.hou {
     public partial class RenLiHandle {
         
         /// <summary>
-        /// TextBox_BeginTime 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_BeginTime;
-        
-        /// <summary>
-        /// TextBox_EndTime 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_EndTime;
-        
-        /// <summary>
         /// btn_TimeSearch 控件。
         /// </summary>
         /// <remarks>
