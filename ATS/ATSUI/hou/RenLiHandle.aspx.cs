@@ -80,5 +80,29 @@ namespace ATS.ATSUI.hou
             BaseInformationBLL.deletBaseInformation(key);
             bindGrid(null, null);
         }
+
+        protected void GridView_Search_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView_Search.EditIndex = -1;
+            bindGrid(null, null);
+        }
+
+        protected void GridView_Search_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridView_Search.EditIndex = e.NewEditIndex;
+            bindGrid(null, null);
+        }
+
+        protected void GridView_Search_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            string key = e.Keys[0].ToString();
+            string resume = e.NewValues["Resume"].ToString();
+            string interview = e.NewValues["Interview"].ToString();
+            HandleBLL.UpdataHandle(key, interview , resume);
+            GridView_Search.EditIndex = -1;
+            bindGrid(null, null);
+        }
+
+       
     }
 }

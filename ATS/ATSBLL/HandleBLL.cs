@@ -16,5 +16,10 @@ namespace ATS.ATSBLL
             handle = HandleDLL.SearchAll(IDNumber);
             return handle;
         }
+
+        public static void UpdataHandle(string IDNumber, string Interview, string Resume)
+        {
+            HandleDLL.UpdataHandle(IDNumber,Interview,Resume);
+        }
     }
 }

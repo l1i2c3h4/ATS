@@ -57,13 +57,15 @@ namespace ATS.ATSDLL
                         handle.Resume = Convert.ToString(reader["resume"]);
                         handle.Interview = Convert.ToString(reader["interview"]);
                     }
-
                 }
             }
-
             return handle;
         }
 
+        /// <summary>
+        /// 删除一个简历的处理记录
+        /// </summary>
+        /// <param name="IDNumber"></param>
         public static void Delethandle(string IDNumber)
         {
             using (SqlHelper db = new SqlHelper())
@@ -74,9 +76,22 @@ namespace ATS.ATSDLL
                     db.AddInParameter(command, "@IDNumber", DbType.String, IDNumber);
                     db.ExecuteReader(command);
                 }
-
             }
         }
 
+        public static void UpdataHandle(string IDNumber,string Interview,string Resume)
+        {
+            using (SqlHelper db = new SqlHelper())
+            {
+                string sql = "update handle set resume=@resume, interview=@interview where IDNumber=@IDNumber";
+                using (DbCommand command = db.GetSqlStringCommond(sql))
+                {
+                    db.AddInParameter(command, "@resume", DbType.String, Resume);
+                    db.AddInParameter(command, "@interview", DbType.String, Interview);
+                    db.AddInParameter(command, "@IDNumber", DbType.String, IDNumber);
+                    db.ExecuteReader(command);
+                }
+            }
+        }
     }
 }

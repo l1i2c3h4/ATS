@@ -12,9 +12,9 @@
 
     <div class="col-sm-12">
         <label id="Label1">应聘时间</label>
-        <input type="text" id="datetimeStart" name="datetimeStart" class="form_datetime" readonly autocomplete="off"/>
+        <input type="text" id="datetimeStart" name="datetimeStart" class="form_datetime" readonly autocomplete="off" />
         <label id="Label2">到</label>
-        <input type="text" id="datetimeEnd" name="datetimeEnd" class="form_datetime" readonly autocomplete="off"/>
+        <input type="text" id="datetimeEnd" name="datetimeEnd" class="form_datetime" readonly autocomplete="off" />
         <asp:Button runat="server" ID="btn_TimeSearch" class="btn btn-primary" Text="查询" OnClick="btn_TimeSearch_Click" />
     </div>
 
@@ -25,21 +25,27 @@
 
     <div class="col-sm-12">
 
-        <asp:GridView ID="GridView_Search" runat="server" AutoGenerateColumns="False" DataKeyNames="IDNumber"  CellPadding="4" ForeColor="#333333" GridLines="None" Height="181px" Width="968px" OnSorting="GridView_Search_Sorting" AllowSorting="True" OnRowDeleting="GridView_Search_RowDeleting">
+        <asp:GridView ID="GridView_Search" runat="server" AutoGenerateColumns="False" DataKeyNames="IDNumber" CellPadding="4" ForeColor="#333333" GridLines="None" Height="160px" Width="1079px" OnSorting="GridView_Search_Sorting" AllowSorting="True" OnRowDeleting="GridView_Search_RowDeleting" OnRowCancelingEdit="GridView_Search_RowCancelingEdit"
+            OnRowEditing="GridView_Search_RowEditing"
+            OnRowUpdating="GridView_Search_RowUpdating" >
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField HeaderText="应聘编号" DataField="IDNumber" SortExpression="IDNumber" ItemStyle-HorizontalAlign="Center" > <ItemStyle HorizontalAlign="Center"></ItemStyle></asp:BoundField>
-                <asp:BoundField HeaderText="身份证号" DataField="IDCard" SortExpression="IDCard" />
-                <asp:BoundField HeaderText="姓名 " DataField="Name" SortExpression="name" />
-                <asp:BoundField HeaderText="简历筛选" DataField="Resume" SortExpression="resume"/>
+                <asp:ButtonField ButtonType="Button" CommandName="Edit" Text="查看详细简历" />
+                <asp:BoundField HeaderText="应聘编号" DataField="IDNumber" SortExpression="IDNumber" ItemStyle-HorizontalAlign="Center" ReadOnly="true">
+                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                </asp:BoundField>
+                <asp:BoundField HeaderText="身份证号" DataField="IDCard" SortExpression="IDCard" ReadOnly="true"/>
+                <asp:BoundField HeaderText="姓名 " DataField="Name" SortExpression="name" ReadOnly="true"/>
+                <asp:BoundField HeaderText="简历筛选" DataField="Resume" SortExpression="resume" />
                 <asp:BoundField HeaderText="面试情况" DataField="Interview" SortExpression="interview" />
-                <asp:BoundField HeaderText="学历 " DataField="EducationalBackgrounp" SortExpression="educationalBackgrounp" />
-                <asp:BoundField HeaderText="联系方式" DataField="Phone" SortExpression="phone" />
-                <asp:BoundField HeaderText="地址 " DataField="Address" SortExpression="address" />
-                <asp:BoundField HeaderText="第一选择" DataField="FirstChoice" SortExpression="firstChoice"/>
-                <asp:BoundField HeaderText="第二选择" DataField="SecondChoice" SortExpression="secondChoice" />
-                <asp:BoundField HeaderText="服从调剂" DataField="Adjust" SortExpression="adjust" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:BoundField HeaderText="学历 " DataField="EducationalBackgrounp" ReadOnly="true" SortExpression="educationalBackgrounp" />
+                <asp:BoundField HeaderText="联系方式" DataField="Phone" SortExpression="phone" ReadOnly="true"/>
+                <asp:BoundField HeaderText="地址 " DataField="Address" SortExpression="address" ReadOnly="true"/>
+                <asp:BoundField HeaderText="第一选择" DataField="FirstChoice" SortExpression="firstChoice" ReadOnly="true"/>
+                <asp:BoundField HeaderText="第二选择" DataField="SecondChoice" SortExpression="secondChoice" ReadOnly="true"/>
+                <asp:BoundField HeaderText="服从调剂" DataField="Adjust" SortExpression="adjust" ReadOnly="true"/>
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True"
+                    EditText="处理简历" UpdateText="保存" CancelText="取消" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />

@@ -288,6 +288,10 @@ namespace ATS.ATSDLL
             }
         }
 
+        /// <summary>
+        /// 删除一个简历的人员信息
+        /// </summary>
+        /// <param name="IDNumber"></param>
         public static void DeletBaseInformation(string IDNumber)
         {
             using (SqlHelper db = new SqlHelper())
@@ -301,5 +305,7 @@ namespace ATS.ATSDLL
 
             }
         }
+
+
     }
 }
