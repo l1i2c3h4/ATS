@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ATSUI\hou\RenLiHandle.aspx" />
+    <Content Include="ATSUI\hou\Resume.aspx" />
     <Content Include="ATSUI\qian\Apply.aspx" />
     <Content Include="ATSUI\hou\Job.aspx" />
     <Content Include="ATSUI\qian\Recruit.aspx" />
@@ -132,8 +133,8 @@
     <Content Include="bootstrap\js\locales\bootstrap-datetimepicker.zh-TW.js" />
     <Content Include="bootstrap\js\npm.js" />
     <Content Include="data\logo.png" />
-    <Content Include="test1.aspx" />
     <Content Include="test2.aspx" />
+    <Content Include="test1.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -147,6 +148,7 @@
     <Compile Include="ATSDLL\JobDLL.cs" />
     <Compile Include="ATSDLL\SqlHelper.cs" />
     <Compile Include="ATSEntity\BaseInformation.cs" />
+    <Compile Include="ATSEntity\BaseInformationALL.cs" />
     <Compile Include="ATSEntity\BaseView.cs" />
     <Compile Include="ATSEntity\Family.cs" />
     <Compile Include="ATSEntity\Handle.cs" />
@@ -166,6 +168,13 @@
     </Compile>
     <Compile Include="ATSUI\hou\RenLiHandle.aspx.designer.cs">
       <DependentUpon>RenLiHandle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ATSUI\hou\Resume.aspx.cs">
+      <DependentUpon>Resume.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ATSUI\hou\Resume.aspx.designer.cs">
+      <DependentUpon>Resume.aspx</DependentUpon>
     </Compile>
     <Compile Include="ATSUI\qian\Apply.aspx.cs">
       <DependentUpon>Apply.aspx</DependentUpon>
@@ -196,19 +205,19 @@
       <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="test1.aspx.cs">
-      <DependentUpon>test1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="test1.aspx.designer.cs">
-      <DependentUpon>test1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="test2.aspx.cs">
       <DependentUpon>test2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="test2.aspx.designer.cs">
       <DependentUpon>test2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test1.aspx.cs">
+      <DependentUpon>test1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test1.aspx.designer.cs">
+      <DependentUpon>test1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

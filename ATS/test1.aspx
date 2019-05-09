@@ -1,60 +1,38 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="test1.aspx.cs" Inherits="ATS.test1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="test1.aspx.cs" Inherits="ATS.text1" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 引入 Bootstrap -->
-
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-
-    <title></title>
-    <!-- 引入 Bootstrap -->
+<head>
+    <script>
+        function printdiv(printpage) {
+            var headstr = "<html><head><title></title></head><body>";
+            var footstr = "</body>";
+            var printData = document.getElementById("dvData").innerHTML;
+            var oldstr = document.body.innerHTML;
+            document.body.innerHTML = headstr + newstr + footstr;
+            window.print();
+            document.body.innerHTML = oldstr;
+            returnfalse;
+        }
+    </script>
+    <title>div print</title>
 </head>
 <body>
 
-    <div>
-
-        <span>日期周期</span>
-
-        <input size="5" type="text" id="datetimeStart" readonly class="form_datetime form-control" />
-
-        <span>至 </span>
-
-        <input size="5" type="text" id="datetimeEnd" readonly class="form_datetime form-control" />
+    <input name="b_print" type="button" class="ipt" onclick="printme;" value=" Print " />
+    <div id="div_print">
+        <h1 style="color: Red">The Div content which you want to print</h1>
     </div>
-
-
-
-
-
-    <script type="text/javascript" src="bootstrap/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
-
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-
-    <script type="text/javascript" src="bootstrap/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
-    <script type="text/javascript">
-        $("#datetimeStart").datetimepicker({
-            format: 'yyyy-mm-dd',
-            minView: 'month',
-            language: 'zh-CN',
-            autoclose: true,
-        }).on("click", function () {
-            $("#datetimeStart").datetimepicker("setEndDate", $("#datetimeEnd").val())
-        });
-        $("#datetimeEnd").datetimepicker({
-            format: 'yyyy-mm-dd',
-            minView: 'month',
-            language: 'zh-CN',
-            autoclose: true,
-            startDate: new Date()
-        }).on("click", function () {
-            $("#datetimeEnd").datetimepicker("setStartDate", $("#datetimeStart").val())
-        });
+    <span id='div1'>把要打印的内容放这里</span>
+    <p>所有内容</p>
+    <div id="div2">div2的内容</div>
+    <a href="javascript:printme()" rel="external nofollow" target="_self">打印</a>
+    <script language="javascript"> 
+        function printme() {
+            document.body.innerHTML = document.getElementById('div1').innerHTML + '<br/>' + document.getElementById('div2').innerHTML;
+            window.print();
+        }
     </script>
 
 </body>

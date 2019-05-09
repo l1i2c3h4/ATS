@@ -10,6 +10,6 @@
 namespace ATS {
     
     
-    public partial class test1 {
+    public partial class text1 {
     }
 }

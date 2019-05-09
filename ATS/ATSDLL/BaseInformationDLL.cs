@@ -56,7 +56,6 @@ namespace ATS.ATSDLL
             }
         }
 
-       
         /// <summary>
         /// 首次提交添加一个新的应聘求职信息
         /// </summary>
@@ -237,13 +236,13 @@ namespace ATS.ATSDLL
         /// </summary>
         /// <param name="IDCard"></param>
         /// <returns></returns>
-        public static BaseInformation SearchALL(string IDCard)
+        public static BaseInformationALL SearchALL(string IDCard)
         {
-            BaseInformation baseInformation = null;
+            BaseInformationALL baseInformation = null;
 
             using (SqlHelper db = new SqlHelper())
             {
-                string sql = "select name,IDNumber,firstChoice,secondChoice from baseInformation where IDCard = @IDCard";
+                string sql = "select * from baseInformation where IDCard = @IDCard";
                 using (DbCommand command = db.GetSqlStringCommond(sql))
                 {
                     db.AddInParameter(command, "@IDCard", DbType.String, IDCard);
@@ -252,11 +251,30 @@ namespace ATS.ATSDLL
                         //将从数据库读取的数据转换成BaseInfomation类的实例
                         while (reader.Read())
                         {
-                            baseInformation = new BaseInformation();
+                            baseInformation = new BaseInformationALL();
                             baseInformation.Name = reader["name"].ToString();
-                            baseInformation.IDNumber = Convert.ToInt32(reader["IDNumber"].ToString());
+                            baseInformation.Gender = reader["gender"].ToString();
+                            baseInformation.DateOfBirth = reader["dateOfBirth"].ToString();
+                            baseInformation.MaritalStatus = reader["maritalStatus"].ToString();
+                            baseInformation.PoliticalStatus = reader["politicalStatus"].ToString();
+                            baseInformation.NativePlace = reader["nativePlace"].ToString();
+                            baseInformation.EducationalBackgrounp = reader["educationalBackgrounp"].ToString();
+                            baseInformation.Height = reader["height"].ToString();
+                            baseInformation.Weight = reader["weight"].ToString();
+                            baseInformation.CommunicableDisease = reader["communicableDisease"].ToString();
+                            baseInformation.Achromatopsia = reader["achromatopsia"].ToString();
+                            baseInformation.EstimatedTime = reader["EstimatedTime"].ToString();
+                            baseInformation.Email = reader["Email"].ToString();
+                            baseInformation.Phone = reader["phone"].ToString();
+                            baseInformation.Address = reader["address"].ToString();
                             baseInformation.FirstChoice = reader["firstChoice"].ToString();
                             baseInformation.SecondChoice = reader["secondChoice"].ToString();
+                            baseInformation.Adjust = reader["adjust"].ToString();
+                            baseInformation.WorkBeginTime01 = reader["workBeginTime01"].ToString();
+
+
+                            baseInformation.IDNumber = Convert.ToInt32(reader["IDNumber"].ToString());
+                           
                         }
                     }
                 }
