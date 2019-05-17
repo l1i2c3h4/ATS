@@ -228,7 +228,7 @@ namespace ATS.ATSDLL
                     db.ExecuteNonQuery(command);
                 }
             }
-           
+
         }
 
         /// <summary>
@@ -270,11 +270,46 @@ namespace ATS.ATSDLL
                             baseInformation.FirstChoice = reader["firstChoice"].ToString();
                             baseInformation.SecondChoice = reader["secondChoice"].ToString();
                             baseInformation.Adjust = reader["adjust"].ToString();
-                            baseInformation.WorkBeginTime01 = reader["workBeginTime01"].ToString();
 
+                            baseInformation.WorkBeginTime01 = reader["workBeginTime01"].ToString();
+                            baseInformation.WorkEndTime01 = reader["workEndTime01"].ToString();
+                            baseInformation.WorkPlace01 = reader["workPlace01"].ToString();
+                            baseInformation.WorkJob01 = reader["workJob01"].ToString();
+                            baseInformation.WorkBeginTime02 = reader["workBeginTime02"].ToString();
+                            baseInformation.WorkEndTime02 = reader["workEndTime02"].ToString();
+                            baseInformation.WorkPlace02 = reader["workPlace02"].ToString();
+                            baseInformation.WorkJob02 = reader["workJob02"].ToString();
+                            baseInformation.WorkBeginTime03 = reader["workBeginTime03"].ToString();
+                            baseInformation.WorkEndTime03 = reader["workEndTime03"].ToString();
+                            baseInformation.WorkPlace03 = reader["workPlace03"].ToString();
+                            baseInformation.WorkJob03 = reader["workJob03"].ToString();
+                            baseInformation.WorkPerformance = reader["workPerformance"].ToString();
+
+                            baseInformation.StudyBeginTime01 = reader["studyBeginTime01"].ToString();
+                            baseInformation.StudyEndTime01 = reader["studyEndTime01"].ToString();
+                            baseInformation.StudyPlace01 = reader["studyPlace01"].ToString();
+                            baseInformation.StudyMajor01 = reader["studyMajor01"].ToString();
+                            baseInformation.StudyBeginTime02 = reader["studyBeginTime02"].ToString();
+                            baseInformation.StudyEndTime02 = reader["studyEndTime02"].ToString();
+                            baseInformation.StudyPlace02 = reader["studyPlace02"].ToString();
+                            baseInformation.StudyMajor02 = reader["studyMajor02"].ToString();
+                            baseInformation.StudyBeginTime03 = reader["studyBeginTime03"].ToString();
+                            baseInformation.StudyEndTime03 = reader["studyEndTime03"].ToString();
+                            baseInformation.StudyPlace03 = reader["studyPlace03"].ToString();
+                            baseInformation.StudyMajor03 = reader["studyMajor03"].ToString();
+                            baseInformation.StudyEnglish = reader["studyEnglish"].ToString();
+                            baseInformation.StudyConputer = reader["studyConputer"].ToString();
+                            baseInformation.StudyOther = reader["studyOther"].ToString();
+                            baseInformation.StudyPerformance = reader["studyPerformance"].ToString();
+
+                            baseInformation.FamilyRelationship01 = reader["familyRelationship01"].ToString();
+                            baseInformation.FamilyName01 = reader["familyName01"].ToString();
+                            baseInformation.FamilyAge01 = reader["familyAge01"].ToString();
+                            baseInformation.FamilyPlace01 = reader["familyPlace01"].ToString();
+                            baseInformation.FamilyJob01 = reader["familyJob01"].ToString();
 
                             baseInformation.IDNumber = Convert.ToInt32(reader["IDNumber"].ToString());
-                           
+
                         }
                     }
                 }
@@ -282,7 +317,7 @@ namespace ATS.ATSDLL
             return baseInformation;
         }
 
-        public static DataTable SearchView(string beginTime,string endTime,string sortField,string sort)
+        public static DataTable SearchView(string beginTime, string endTime, string sortField, string sort)
         {
             using (SqlHelper db = new SqlHelper())
             {
@@ -290,7 +325,7 @@ namespace ATS.ATSDLL
                 if (!string.IsNullOrEmpty(sortField))
                 {
                     sql += " order by " + sortField + " " + sort;
-                   
+
                 }
 
 

@@ -21,7 +21,7 @@ namespace ATS.ATSUI.qian
         {
             
             Handle handle = HandleBLL.SearchAll(TextBox_searchIDCard.Text);
-            BaseInformation baseInformation = BaseInformationBLL.SearchAll(TextBox_searchIDCard.Text);
+            BaseInformationALL baseInformation = BaseInformationBLL.SearchAll(TextBox_searchIDCard.Text);
             if (baseInformation == null)
             {
                 Label_Information.Visible = true;

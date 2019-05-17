@@ -6,6 +6,7 @@ using System.Web;
 using ATS.ATSDLL;
 using System.Data;
 
+
 namespace ATS.ATSBLL
 {
     public static class BaseInformationBLL
@@ -35,7 +36,12 @@ namespace ATS.ATSBLL
             return IDNumber;
         }
 
-        public static BaseInformation SearchAll(string IDCard)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="IDCard"></param>
+        /// <returns></returns>
+        public static BaseInformationALL SearchAll(string IDCard)
         {
             return BaseInformationDLL.SearchALL(IDCard);
         }

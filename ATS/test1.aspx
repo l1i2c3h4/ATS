@@ -1,39 +1,120 @@
-ï»¿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="test1.aspx.cs" Inherits="ATS.text1" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="test1.aspx.cs" Inherits="ATS.text1" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <script>
-        function printdiv(printpage) {
-            var headstr = "<html><head><title></title></head><body>";
-            var footstr = "</body>";
-            var printData = document.getElementById("dvData").innerHTML;
-            var oldstr = document.body.innerHTML;
-            document.body.innerHTML = headstr + newstr + footstr;
-            window.print();
-            document.body.innerHTML = oldstr;
-            returnfalse;
+    <meta name="vs_targetSchema" content="#">
+    <title>²âÊÔ´òÓ¡¼°·ÖÒ³</title>
+    <meta http-equiv="Content-Type" content="text/html;   charset=gb2312">
+    <!--media=print   Õâ¸öÊôĞÔ¿ÉÒÔÔÚ´òÓ¡Ê±ÓĞĞ§-->
+    ÉÏ±ß°´Å¥ÔÚ´òÓ¡µÄÊ±ºò²»³öÏÖ
+    <mce:style media="print"><!--
+        .Noprint
+        {
+            display: none;
         }
-    </script>
-    <title>div print</title>
+        .PageNext
+        {
+            page-break-after: always;
+        }
+    
+--></mce:style>
+    <style media="print" mce_bogus="1">
+        .Noprint {
+            display: none;
+        }
+
+        .PageNext {
+            page-break-after: always;
+        }
+    </style>
 </head>
 <body>
-
-    <input name="b_print" type="button" class="ipt" onclick="printme;" value=" Print " />
-    <div id="div_print">
-        <h1 style="color: Red">The Div content which you want to print</h1>
+    <center class="Noprint">
+        <p>
+            <object id="WebBrowser" classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2" height="0"
+                width="0">
+            </object>
+            <input type="button" value="´òÓ¡" onclick="document.all.WebBrowser.ExecWB(6, 1)">
+            <input type="button" value="Ö±½Ó´òÓ¡" onclick="document.all.WebBrowser.ExecWB(6, 6)">
+            <input type="button" value="Ò³ÃæÉèÖÃ" onclick="document.all.WebBrowser.ExecWB(8, 1)">
+            <input type="button" value="´òÓ¡Ô¤ÀÀ" onclick="document.all.WebBrowser.ExecWB(7, 1)">
+            <br />
+        </p>
+        <hr align="center" width="90%" size="1" noshade>
+    </center>
+    <table width="90%" border="0" align="center" cellpadding="2" cellspacing="0" class="tabp">
+        <tr>
+            <td colspan="3" class="tdp">µÚ1Ò³
+            </td>
+            <tr>
+                <td colspan="3" class="tdp">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="50%" class="tdp">
+                                <p>
+                                    ±¨±í±êÌâ
+                                </p>
+                                <p>
+                                    µÚÒ»Ò³±¨±íÄÚÈİ
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+    </table>
+    <hr align="center" width="90%" size="1" noshade class="NOPRINT">   
+    <!--·ÖÒ³-->
+    <div class="PageNext">
     </div>
-    <span id='div1'>æŠŠè¦æ‰“å°çš„å†…å®¹æ”¾è¿™é‡Œ</span>
-    <p>æ‰€æœ‰å†…å®¹</p>
-    <div id="div2">div2çš„å†…å®¹</div>
-    <a href="javascript:printme()" rel="external nofollow" target="_self">æ‰“å°</a>
-    <script language="javascript"> 
-        function printme() {
-            document.body.innerHTML = document.getElementById('div1').innerHTML + '<br/>' + document.getElementById('div2').innerHTML;
-            window.print();
-        }
-    </script>
-
+    <table width="90%" border="0" align="center" cellpadding="2" cellspacing="0" class="tabp">
+        <tr>
+            <td class="tdp">µÚ2Ò³
+            </td>
+        </tr>
+        <tr>
+            <td class="tdp">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="50%" class="tdp">
+                            <p>
+                                ±¨±í±êÌâ
+                            </p>
+                            <p>
+                                µÚ¶şÒ³±¨±íÄÚÈİ
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <hr align="center" width="90%" size="1" noshade class="NOPRINT">
+    <div class="PageNext">
+    </div>
+    <table width="90%" border="0" align="center" cellpadding="2" cellspacing="0" class="tabp">
+        <tr>
+            <td class="tdp">µÚ3Ò³
+            </td>
+        </tr>
+        <tr>
+            <td class="tdp">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="50%" class="tdp">
+                            <p>
+                                ±¨±í±êÌâ
+                            </p>
+                            <p>
+                                µÚÈıÒ³±¨±íÄÚÈİ
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
