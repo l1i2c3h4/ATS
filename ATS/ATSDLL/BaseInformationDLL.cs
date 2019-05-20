@@ -12,6 +12,11 @@ namespace ATS.ATSDLL
     public static class BaseInformationDLL
     {
 
+        /// <summary>
+        /// 根据身份证号找到应聘编号
+        /// </summary>
+        /// <param name="IDCard"></param>
+        /// <returns></returns>
         public static int SearchIDNumber(string IDCard)
         {
 

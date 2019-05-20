@@ -25,14 +25,14 @@
 
     <div class="col-sm-12">
 
-        <asp:GridView ID="GridView_Search" runat="server" AutoGenerateColumns="False" DataKeyNames="IDNumber" CellPadding="4" ForeColor="#333333" GridLines="None" Height="86px" Width="1514px" OnSorting="GridView_Search_Sorting" AllowSorting="True" OnRowDeleting="GridView_Search_RowDeleting" OnRowCancelingEdit="GridView_Search_RowCancelingEdit"
+        <asp:GridView ID="GridView_Search" runat="server" AutoGenerateColumns="False" DataKeyNames="IDCard" CellPadding="4" ForeColor="#333333" GridLines="None" Height="86px" Width="1514px" OnSorting="GridView_Search_Sorting" AllowSorting="True" OnRowDeleting="GridView_Search_RowDeleting" OnRowCancelingEdit="GridView_Search_RowCancelingEdit"
             OnRowEditing="GridView_Search_RowEditing"
             OnRowUpdating="GridView_Search_RowUpdating">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:TemplateField HeaderText="查看简历"><%--查看简历信息--%>
                     <ItemTemplate>
-                        <a href="Resume.aspx?id=<%#Eval("IDNumber")%>" target="eventPrintWindow"><ItemStyle HorizontalAlign="Center">查看</a>
+                        <a href="Resume.aspx?id=<%#Eval("IDCard")%>" target="eventPrintWindow"><ItemStyle HorizontalAlign="Center">查看</a>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField HeaderText="应聘编号" DataField="IDNumber" SortExpression="IDNumber" ItemStyle-HorizontalAlign="Center" ReadOnly="true">

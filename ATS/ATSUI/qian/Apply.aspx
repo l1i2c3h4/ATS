@@ -77,7 +77,6 @@
                     </span>
                     <div class="col-md-4">
                         <asp:TextBox ID="TextBox_Name" class="form-control" runat="server"></asp:TextBox>
-
                     </div>
                 </div>
 

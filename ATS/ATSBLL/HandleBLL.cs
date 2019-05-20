@@ -21,5 +21,6 @@ namespace ATS.ATSBLL
         {
             HandleDLL.UpdataHandle(IDNumber,Interview,Resume);
         }
+        
     }
 }
