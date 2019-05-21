@@ -17,12 +17,20 @@
         <input type="text" id="datetimeEnd" name="datetimeEnd" class="form_datetime" readonly autocomplete="off" />
         <asp:Button runat="server" ID="btn_TimeSearch" class="btn btn-primary" Text="查询" OnClick="btn_TimeSearch_Click" />
     </div>
-
+    <br />
     <div class="col-sm-12">
-        <br />
-        <br />
-    </div>
+        <label id="Label3">第一选择</label>
+        <asp:TextBox ID="TextBox_firstChoice" runat="server"></asp:TextBox>
+        <label id="Label4">第二选择</label>
+        <asp:TextBox ID="TextBox_secondChoice" runat="server"></asp:TextBox>
 
+    </div>
+    <br />
+    <div class="col-sm-12">
+        <asp:Button runat="server" ID="btn_choiceSearch" class="btn btn-primary" Text="查询" OnClick="btn_choiceSearch_Click" />
+        <asp:Button runat="server" ID="btn_dayin" class="btn btn-primary" Text="导出表格" OnClick="btn_dayin_Click" />
+    </div>
+    <br />
     <div class="col-sm-12">
 
         <asp:GridView ID="GridView_Search" runat="server" AutoGenerateColumns="False" DataKeyNames="IDCard" CellPadding="4" ForeColor="#333333" GridLines="None" Height="86px" Width="1514px" OnSorting="GridView_Search_Sorting" AllowSorting="True" OnRowDeleting="GridView_Search_RowDeleting" OnRowCancelingEdit="GridView_Search_RowCancelingEdit"
@@ -32,7 +40,9 @@
             <Columns>
                 <asp:TemplateField HeaderText="查看简历"><%--查看简历信息--%>
                     <ItemTemplate>
-                        <a href="Resume.aspx?id=<%#Eval("IDCard")%>" target="eventPrintWindow"><ItemStyle HorizontalAlign="Center">查看</a>
+                        <a href="Resume.aspx?id=<%#Eval("IDCard")%>" target="eventPrintWindow">
+                            <itemstyle horizontalalign="Center">
+                            查看</a>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField HeaderText="应聘编号" DataField="IDNumber" SortExpression="IDNumber" ItemStyle-HorizontalAlign="Center" ReadOnly="true">

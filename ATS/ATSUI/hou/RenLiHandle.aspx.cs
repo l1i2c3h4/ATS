@@ -103,6 +103,32 @@ namespace ATS.ATSUI.hou
             bindGrid(null, null);
         }
 
-       
+        protected void btn_dayin_Click(object sender, EventArgs e)
+        {
+            Response.Clear();
+            Response.Buffer = true;
+            Response.Charset = "gb2312";
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312");
+            Response.AppendHeader("content-disposition", "attachment;filename=\"" + System.Web.HttpUtility.UrlEncode("数据导出", System.Text.Encoding.UTF8) + ".xls\"");
+            Response.ContentType = "Application/ms-excel";
+            System.IO.StringWriter oStringWriter = new System.IO.StringWriter();
+            System.Web.UI.HtmlTextWriter oHtmlTextWriter = new System.Web.UI.HtmlTextWriter(oStringWriter);
+            this.GridView_Search.RenderControl(oHtmlTextWriter);
+            Response.Output.Write(oStringWriter.ToString());
+            Response.Flush();
+            Response.End();
+        }
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            // Confirms that an HtmlForm control is rendered for
+
+            //为了保险期间还可以在这里加入判断条件防止HTML中已经存在该ID
+        }
+
+        protected void btn_choiceSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
