@@ -28,6 +28,7 @@
     <br />
     <div class="col-sm-12">
         <asp:Button runat="server" ID="btn_choiceSearch" class="btn btn-primary" Text="查询" OnClick="btn_choiceSearch_Click" />
+        &nbsp;&nbsp;
         <asp:Button runat="server" ID="btn_dayin" class="btn btn-primary" Text="导出表格" OnClick="btn_dayin_Click" />
     </div>
     <br />
