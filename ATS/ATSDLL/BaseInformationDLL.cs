@@ -322,11 +322,19 @@ namespace ATS.ATSDLL
             return baseInformation;
         }
 
-        public static DataTable SearchView(string beginTime, string endTime, string sortField, string sort)
+        /// <summary>
+        /// 根据当前信息进行排序
+        /// </summary>
+        /// <param name="beginTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="sortField"></param>
+        /// <param name="sort"></param>
+        /// <returns></returns>
+        public static DataTable SearchView(string beginTime, string endTime, string firstChoice,string secondChoice, string sortField, string sort)
         {
             using (SqlHelper db = new SqlHelper())
             {
-                string sql = "select baseInformation.IDNumber,IDCard,name,resume,interview,educationalBackgrounp,phone,address,firstChoice,secondChoice,adjust from baseInformation,handle where baseInformation.IDNumber = handle.IDNumber and baseInformation.time between @beginTime and @endTime";
+                string sql = "select baseInformation.IDNumber,IDCard,name,resume,interview,educationalBackgrounp,phone,address,firstChoice,secondChoice,adjust from baseInformation,handle where baseInformation.IDNumber = handle.IDNumber and baseInformation.time between @beginTime and @endTime and baseInformation.firstChoice like @firstChoice and baseInformation.secondChoice like @secondChoice";
                 if (!string.IsNullOrEmpty(sortField))
                 {
                     sql += " order by " + sortField + " " + sort;
@@ -338,6 +346,8 @@ namespace ATS.ATSDLL
                 {
                     db.AddInParameter(command, "@beginTime", DbType.DateTime, beginTime);
                     db.AddInParameter(command, "@endTime", DbType.DateTime, endTime);
+                    db.AddInParameter(command, "@firstChoice", DbType.String, firstChoice);
+                    db.AddInParameter(command, "@secondChoice", DbType.String, secondChoice);
                     using (DataTable table = db.ExecuteDataTable(command))
                     {
                         return table;

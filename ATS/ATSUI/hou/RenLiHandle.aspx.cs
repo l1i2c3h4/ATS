@@ -29,7 +29,7 @@ namespace ATS.ATSUI.hou
                 string datetimeEnd = Request["datetimeEnd"];
                 ViewState["datetimeStart"] = datetimeStart;
                 ViewState["datetimeEnd"] = datetimeEnd;
-                GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, null, null);
+                GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, null, null, null, null);
                 GridView_Search.DataBind();
             }
             
@@ -65,7 +65,9 @@ namespace ATS.ATSUI.hou
         {
             string datetimeStart = ViewState["datetimeStart"].ToString();
             string datetimeEnd = ViewState["datetimeEnd"].ToString();
-            GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, sortField, sort);
+            string firstChoice = ViewState["firstChoice"].ToString();
+            string secondChoice = ViewState["secondChoice"].ToString();
+            GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, sortField, sort);
             GridView_Search.DataBind();
         }
 
@@ -126,9 +128,13 @@ namespace ATS.ATSUI.hou
             //为了保险期间还可以在这里加入判断条件防止HTML中已经存在该ID
         }
 
-        protected void btn_choiceSearch_Click(object sender, EventArgs e)
+        protected void btn_Search_Click(object sender, EventArgs e)
         {
+            ViewState["firstChoice"] = TextBox_firstChoice.Text;
+            ViewState["secondChoice"] = TextBox_secondChoice.Text;
 
+            GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, sortField, sort);
+            GridView_Search.DataBind();
         }
     }
 }

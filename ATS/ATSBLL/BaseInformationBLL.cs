@@ -46,9 +46,11 @@ namespace ATS.ATSBLL
             return BaseInformationDLL.SearchALL(IDCard);
         }
 
-        public static DataTable SearchView(string beginTime, string endTime,string sortField, string des)
+        public static DataTable SearchView(string beginTime, string endTime, string firstChoice, string secondChoice, string sortField, string des)
         {
-            return BaseInformationDLL.SearchView(beginTime, endTime, sortField, des);
+            firstChoice = '%' + firstChoice + '%';
+            secondChoice = '%' + secondChoice + '%';
+            return BaseInformationDLL.SearchView(beginTime, endTime, firstChoice, secondChoice, sortField, des);
         }
 
         public static void deletBaseInformation(string IDNumber)
