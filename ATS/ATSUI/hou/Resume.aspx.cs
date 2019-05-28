@@ -71,6 +71,7 @@ namespace ATS.ATSUI.hou
             Label_studyEndTime03.Text = baseInformationALL.StudyEndTime03;
             Label_studyMajor03.Text = baseInformationALL.StudyMajor03;
             Label_studyPlace03.Text = baseInformationALL.StudyPlace03;
+            Label_studyEnglish.Text = baseInformationALL.StudyEnglish;
             Label_studyConputer.Text = baseInformationALL.StudyConputer;
             Label_studyOther.Text = baseInformationALL.StudyOther;
             Label_studyPerformance.Text = baseInformationALL.StudyPerformance;

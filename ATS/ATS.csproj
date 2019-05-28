@@ -135,6 +135,7 @@
     <Content Include="data\logo.png" />
     <Content Include="test2.aspx" />
     <Content Include="test1.aspx" />
+    <Content Include="test3.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -218,6 +219,13 @@
     </Compile>
     <Compile Include="test1.aspx.designer.cs">
       <DependentUpon>test1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test3.aspx.cs">
+      <DependentUpon>test3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test3.aspx.designer.cs">
+      <DependentUpon>test3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

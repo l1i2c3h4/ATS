@@ -4,38 +4,40 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+
+
     <div class="col-sm-12">
         <br />
         <h2>应聘信息查询</h2>
         <br />
     </div>
 
-    <div class="col-sm-12">
+    <div class="col-sm-12" id="div1">
         <label id="Label1">应聘时间</label>
         <input type="text" id="datetimeStart" name="datetimeStart" class="form_datetime" readonly autocomplete="off" />
         <label id="Label2">到</label>
         <input type="text" id="datetimeEnd" name="datetimeEnd" class="form_datetime" readonly autocomplete="off" />
         <asp:Button runat="server" ID="btn_TimeSearch" class="btn btn-primary" Text="查询" OnClick="btn_TimeSearch_Click" />
     </div>
+
     <br />
-    <div class="col-sm-12">
+
+    <div class="col-sm-12" id="div2" style="display:none">
         <label id="Label3">第一选择</label>
         <asp:TextBox ID="TextBox_firstChoice" runat="server"></asp:TextBox>
         <label id="Label4">第二选择</label>
         <asp:TextBox ID="TextBox_secondChoice" runat="server"></asp:TextBox>
-
-    </div>
-    <br />
-    <div class="col-sm-12">
+        <br />
         <asp:Button runat="server" ID="btn_Search" class="btn btn-primary" Text="查询" OnClick="btn_Search_Click" />
         &nbsp;&nbsp;
-        <asp:Button runat="server" ID="btn_clear" class="btn btn-primary" Text="清空条件" OnClick="btn_clear_Click" />
+       
         &nbsp;&nbsp;
         <asp:Button runat="server" ID="btn_dayin" class="btn btn-primary" Text="导出表格" OnClick="btn_dayin_Click" />
     </div>
-    <br />
-    <div class="col-sm-12">
 
+    <br />
+
+    <div class="col-sm-12">
         <asp:GridView ID="GridView_Search" runat="server" AutoGenerateColumns="False" DataKeyNames="IDCard" CellPadding="4" ForeColor="#333333" GridLines="None" Height="86px" Width="1514px" OnSorting="GridView_Search_Sorting" AllowSorting="True" OnRowDeleting="GridView_Search_RowDeleting" OnRowCancelingEdit="GridView_Search_RowCancelingEdit"
             OnRowEditing="GridView_Search_RowEditing"
             OnRowUpdating="GridView_Search_RowUpdating">
@@ -75,6 +77,6 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-
     </div>
+
 </asp:Content>

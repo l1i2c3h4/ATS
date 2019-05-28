@@ -259,6 +259,7 @@ namespace ATS.ATSDLL
                             baseInformation = new BaseInformationALL();
                             baseInformation.Name = reader["name"].ToString();
                             baseInformation.Gender = reader["gender"].ToString();
+                            baseInformation.IDCare = reader["IDCard"].ToString();
                             baseInformation.DateOfBirth = reader["dateOfBirth"].ToString();
                             baseInformation.MaritalStatus = reader["maritalStatus"].ToString();
                             baseInformation.PoliticalStatus = reader["politicalStatus"].ToString();
@@ -312,6 +313,16 @@ namespace ATS.ATSDLL
                             baseInformation.FamilyAge01 = reader["familyAge01"].ToString();
                             baseInformation.FamilyPlace01 = reader["familyPlace01"].ToString();
                             baseInformation.FamilyJob01 = reader["familyJob01"].ToString();
+                            baseInformation.FamilyRelationship02 = reader["familyRelationship02"].ToString();
+                            baseInformation.FamilyName02 = reader["familyName02"].ToString();
+                            baseInformation.FamilyAge02 = reader["familyAge02"].ToString();
+                            baseInformation.FamilyPlace02 = reader["familyPlace02"].ToString();
+                            baseInformation.FamilyJob02 = reader["familyJob02"].ToString();
+                            baseInformation.FamilyRelationship03 = reader["familyRelationship03"].ToString();
+                            baseInformation.FamilyName03 = reader["familyName03"].ToString();
+                            baseInformation.FamilyAge03 = reader["familyAge03"].ToString();
+                            baseInformation.FamilyPlace03 = reader["familyPlace03"].ToString();
+                            baseInformation.FamilyJob03 = reader["familyJob03"].ToString();
 
                             baseInformation.IDNumber = Convert.ToInt32(reader["IDNumber"].ToString());
 

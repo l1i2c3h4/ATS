@@ -14,6 +14,16 @@
     </asp:ContentPlaceHolder>
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({ format: 'yyyy-mm-dd hh:ii' });
+       
+        function display(id) {
+            var traget = document.getElementById(id);
+            if (traget.style.display == "none") {
+                traget.style.display = "block";
+            } else {
+                traget.style.display = "none";
+            }
+        }
+   
     </script>
 </head>
 <body>
@@ -26,7 +36,7 @@
                 <div class="form-group">
                     <table>
                         <tr>
-                            <td class="col-md-2">
+                            <td class="col-md-2"  style='vertical-align:middle'>
                                 <asp:TreeView ID="TreeView1" DataSourceID="SiteMapDataSource1" runat="server">
                                 </asp:TreeView>
                             </td>
