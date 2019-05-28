@@ -130,11 +130,24 @@ namespace ATS.ATSUI.hou
 
         protected void btn_Search_Click(object sender, EventArgs e)
         {
+
             ViewState["firstChoice"] = TextBox_firstChoice.Text;
             ViewState["secondChoice"] = TextBox_secondChoice.Text;
 
-            GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, sortField, sort);
+            string datetimeStart = ViewState["datetimeStart"].ToString();
+            string datetimeEnd = ViewState["datetimeEnd"].ToString();
+            string firstChoice = ViewState["firstChoice"].ToString();
+            string secondChoice = ViewState["secondChoice"].ToString();
+            GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, null, null);
             GridView_Search.DataBind();
+        }
+
+        protected void btn_clear_Click(object sender, EventArgs e)
+        {
+            ViewState["datetimeStart"] = "";
+            ViewState["datetimeEnd"] = "";
+            ViewState["firstChoice"] = "";
+            ViewState["secondChoice"] = "";
         }
     }
 }
