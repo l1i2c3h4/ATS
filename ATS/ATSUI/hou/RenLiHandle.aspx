@@ -38,9 +38,9 @@
     <br />
 
     <div class="col-sm-12">
-        <asp:GridView ID="GridView_Search" runat="server" AutoGenerateColumns="False" DataKeyNames="IDCard" CellPadding="4" ForeColor="#333333" GridLines="None" Height="86px" Width="1514px" OnSorting="GridView_Search_Sorting" AllowSorting="True" OnRowDeleting="GridView_Search_RowDeleting" OnRowCancelingEdit="GridView_Search_RowCancelingEdit"
+        <asp:GridView ID="GridView_Search" runat="server" AutoGenerateColumns="False" DataKeyNames="IDNumber" CellPadding="4" ForeColor="#333333" GridLines="None" Height="86px" Width="1514px" OnSorting="GridView_Search_Sorting" AllowSorting="True" OnRowDeleting="GridView_Search_RowDeleting" OnRowCancelingEdit="GridView_Search_RowCancelingEdit"
             OnRowEditing="GridView_Search_RowEditing"
-            OnRowUpdating="GridView_Search_RowUpdating">
+            OnRowUpdating="GridView_Search_RowUpdating" onitemdatabound="DataGrid1_ItemDataBound">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:TemplateField HeaderText="查看简历"><%--查看简历信息--%>

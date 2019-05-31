@@ -4,34 +4,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>
-
-
-    </title>
-    <script type="text/javascript">
-
-       
-
-        function display(id) {
-                document.getElementById(id).style.display = "block";
-            
-        }
-
-    </script>
+    <title>导出数据到Excel</title>
 </head>
 <body>
-    <form>
+    <form id="form1" runat="server">
+    <div>
     
-    <div id="div1">
-        123
+        <asp:DataGrid ID="DataGrid1" runat="server" 
+            onitemdatabound="DataGrid1_ItemDataBound" >
+        </asp:DataGrid>
+        <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="导出数据到Excel" />
+    
     </div>
-    <div id="div2" style="display: none">
-        456
-    </div>
-        <input id="Button1" type="button" value="button" onclick="display('div2');" />
     </form>
-    
 </body>
-    
+</html>
 </html>

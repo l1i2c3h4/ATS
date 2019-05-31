@@ -18,7 +18,7 @@ namespace ATS.ATSUI.hou
         }
 
         /// <summary>
-        /// 查询信息
+        /// 根据应聘时间查询信息
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -38,6 +38,11 @@ namespace ATS.ATSUI.hou
             }
         }
 
+        /// <summary>
+        /// 表格升降排序
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView_Search_Sorting(object sender, GridViewSortEventArgs e)
         {
             GridView_Search.EditIndex = -1;
@@ -64,6 +69,11 @@ namespace ATS.ATSUI.hou
             bindGrid(e.SortExpression, sort);
         }
 
+        /// <summary>
+        /// 辅助类数据绑定
+        /// </summary>
+        /// <param name="sortField"></param>
+        /// <param name="sort"></param>
         private void bindGrid(string sortField, string sort)
         {
             string datetimeStart = ViewState["datetimeStart"].ToString();
@@ -86,18 +96,33 @@ namespace ATS.ATSUI.hou
             bindGrid(null, null);
         }
 
+        /// <summary>
+        /// 取消处理信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView_Search_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GridView_Search.EditIndex = -1;
             bindGrid(null, null);
         }
 
+        /// <summary>
+        /// 编辑处理信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView_Search_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView_Search.EditIndex = e.NewEditIndex;
             bindGrid(null, null);
         }
 
+        /// <summary>
+        /// 更新处理信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView_Search_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             string key = e.Keys[0].ToString();
@@ -125,6 +150,27 @@ namespace ATS.ATSUI.hou
             Response.Flush();
             Response.End();
         }
+
+        protected void DataGrid1_ItemDataBound(object sender, DataGridItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                //将整个datagrid都格式化为文本格式
+                int datagridcolumns = 2; //datagrid显示列的数量,
+                //获取显示列的数量可以从数据源那里进行获取
+                //比如绑定DataGrid的数据源是DataSet                   
+                //datagrid显示列的数量 = ds.tables[0].Columns.Count;  
+                for (int i = 0; i < datagridcolumns; i++)
+                {
+                    e.Item.Cells[i].Attributes.Add("style", "vnd.ms-excel.numberformat:@");
+                }
+
+                //对需要格式化的列进行格式化
+                //e.Item.Cells[0].Attributes.Add("style", "vnd.ms-excel.numberformat:@");
+                //e.Item.Cells[2].Attributes.Add("style", "vnd.ms-excel.numberformat::#,##0.00");
+                // e.Item.Cells[3].Attributes.Add("style", "vnd.ms-excel.numberformat:￥#,###.00");          
+            }
+        } 
 
         public override void VerifyRenderingInServerForm(Control control)
         {
