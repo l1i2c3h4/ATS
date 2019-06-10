@@ -298,14 +298,9 @@
 
                 <div class="form-group">
                     <label class="control-label col-md-2" for="EstimatedTime">预计可到岗时间</label><span style="color: red; font-size: large;"> * </span><span style="color: red">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_EstimatedTime" ControlToValidate="DropDownList_EstimatedTime" runat="server" ErrorMessage="预计可到岗时间不能为空"></asp:RequiredFieldValidator></span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator_EstimatedTime" ControlToValidate="TextBox_EstimatedTime" runat="server" ErrorMessage="预计可到岗时间不能为空"></asp:RequiredFieldValidator></span>
                     <div class="col-md-4">
-                        <asp:DropDownList ID="DropDownList_EstimatedTime" class="form-control dropdown-toggle" data-toggle="dropdown" runat="server">
-                            <asp:ListItem></asp:ListItem>
-                            <asp:ListItem Text="随时" Value="随时"></asp:ListItem>
-                            <asp:ListItem Text="一周之内" Value="一周之内"></asp:ListItem>
-                            <asp:ListItem Text="一个月之内" Value="一个月之内"></asp:ListItem>
-                        </asp:DropDownList>
+                        <asp:TextBox ID="TextBox_EstimatedTime" class="form-control" runat="server"></asp:TextBox>
                     </div>
                 </div>
 

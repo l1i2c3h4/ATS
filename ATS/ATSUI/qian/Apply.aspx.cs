@@ -43,7 +43,7 @@ namespace ATS.ATSUI
             b.Weight = TextBox_Weight.Text;
             b.CommunicableDisease = DropDownList_CommunicableDisease.Text;
             b.Achromatopsia = DropDownList_Achromatopsia.Text;
-            b.EstimatedTime = DropDownList_EstimatedTime.Text;
+            b.EstimatedTime = TextBox_EstimatedTime.Text;
             b.Email = TextBox_Email.Text;
             b.Phone = TextBox_phone.Text;
             b.Address = TextBox_Address.Text;
