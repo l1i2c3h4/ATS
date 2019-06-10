@@ -78,6 +78,11 @@ namespace ATS
                 // e.Item.Cells[3].Attributes.Add("style", "vnd.ms-excel.numberformat:￥#,###.00");          
             }
         }
-    
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            DataGrid1.DataSource = CreateDataSource();
+            DataGrid1.DataBind();
+        }
     }
 }

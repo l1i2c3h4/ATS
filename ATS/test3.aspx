@@ -13,10 +13,10 @@
         <asp:DataGrid ID="DataGrid1" runat="server" 
             onitemdatabound="DataGrid1_ItemDataBound" >
         </asp:DataGrid>
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="导出数据到Excel" />
     
     </div>
     </form>
 </body>
-</html>
 </html>

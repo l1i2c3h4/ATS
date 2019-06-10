@@ -334,7 +334,7 @@ namespace ATS.ATSDLL
         }
 
         /// <summary>
-        /// 根据当前信息进行排序
+        /// 根据当前信息进行查询、排序
         /// </summary>
         /// <param name="beginTime"></param>
         /// <param name="endTime"></param>
@@ -345,7 +345,11 @@ namespace ATS.ATSDLL
         {
             using (SqlHelper db = new SqlHelper())
             {
-                string sql = "select baseInformation.IDNumber,IDCard,name,resume,interview,educationalBackgrounp,phone,address,firstChoice,secondChoice,adjust from baseInformation,handle where baseInformation.IDNumber = handle.IDNumber and baseInformation.time between @beginTime and @endTime and baseInformation.firstChoice like @firstChoice and baseInformation.secondChoice like @secondChoice";
+                string sql = "select baseInformation.IDNumber,name,IDCard,gender,dateOfBirth,maritalStatus,politicalStatus,nativePlace,educationalBackgrounp,height,weight,communicableDisease,achromatopsia,EstimatedTime,Email,phone,address,firstChoice,secondChoice,adjust,workBeginTime01,workEndTime01,workPlace01,workJob01,workBeginTime02,workEndTime02,workPlace02,workJob02,workBeginTime03,workEndTime03,workPlace03,workJob03,workPerformance,studyBeginTime01,studyEndTime01,studyPlace01,studyMajor01,studyBeginTime02,studyEndTime02,studyPlace02,studyMajor02,studyBeginTime03,studyEndTime03,studyPlace03,studyMajor03,studyEnglish,studyConputer,studyOther,studyPerformance,familyRelationship01,familyName01,familyAge01,familyPlace01,familyJob01,familyRelationship02,familyName02,familyAge02,familyPlace02,familyJob02,familyRelationship03,familyName03,familyAge03,familyPlace03,familyJob03,time,applyNumber,handle.resume,handle.interview " +
+                    "from baseInformation,handle " +
+                    "where baseInformation.IDNumber = handle.IDNumber and " +
+                    "baseInformation.time between @beginTime and @endTime and " +
+                    "baseInformation.firstChoice like @firstChoice and baseInformation.secondChoice like @secondChoice";
                 if (!string.IsNullOrEmpty(sortField))
                 {
                     sql += " order by " + sortField + " " + sort;

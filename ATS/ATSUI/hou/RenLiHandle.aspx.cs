@@ -35,6 +35,7 @@ namespace ATS.ATSUI.hou
                 ViewState["secondChoice"] = "";
                 GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, null, null, null, null);
                 GridView_Search.DataBind();
+                
             }
         }
 
@@ -135,20 +136,37 @@ namespace ATS.ATSUI.hou
 
         protected void btn_dayin_Click(object sender, EventArgs e)
         {
+            string datetimeStart = ViewState["datetimeStart"].ToString();
+            string datetimeEnd = ViewState["datetimeEnd"].ToString();
+            string firstChoice = ViewState["firstChoice"].ToString();
+            string secondChoice = ViewState["secondChoice"].ToString();
+            GridView_dayin1.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, null, null);
+            GridView_dayin1.DataBind();
+
             Response.Clear();
             Response.Buffer = true;
             Response.Charset = "gb2312";
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312");
             Response.AppendHeader("content-disposition", "attachment;filename=\"" + System.Web.HttpUtility.UrlEncode("数据导出", System.Text.Encoding.UTF8) + ".xls\"");
             Response.ContentType = "Application/ms-excel";
-            System.IO.StringWriter oStringWriter = new System.IO.StringWriter();
+
+            this.EnableViewState = false;
+            System.Globalization.CultureInfo myCItrad = new System.Globalization.CultureInfo("ZH-CN", true);
+            System.IO.StringWriter oStringWriter = new System.IO.StringWriter(myCItrad);
             System.Web.UI.HtmlTextWriter oHtmlTextWriter = new System.Web.UI.HtmlTextWriter(oStringWriter);
 
-            ClearControls(GridView_Search);
-            this.GridView_Search.RenderControl(oHtmlTextWriter);
+            //ClearControls(GridView_Search);
+            //this.GridView_Search.RenderControl(oHtmlTextWriter);
+            ClearControls(GridView_dayin1);
+            this.GridView_dayin1.RenderControl(oHtmlTextWriter);
             Response.Output.Write(oStringWriter.ToString());
             Response.Flush();
             Response.End();
+        }
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            //base.VerifyRenderingInServerForm(control);不检查是否包含在HTMLFORM中
         }
 
         protected void DataGrid1_ItemDataBound(object sender, DataGridItemEventArgs e)
@@ -156,7 +174,7 @@ namespace ATS.ATSUI.hou
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 //将整个datagrid都格式化为文本格式
-                int datagridcolumns = 2; //datagrid显示列的数量,
+                int datagridcolumns = 6; //datagrid显示列的数量,
                 //获取显示列的数量可以从数据源那里进行获取
                 //比如绑定DataGrid的数据源是DataSet                   
                 //datagrid显示列的数量 = ds.tables[0].Columns.Count;  
@@ -172,12 +190,7 @@ namespace ATS.ATSUI.hou
             }
         } 
 
-        public override void VerifyRenderingInServerForm(Control control)
-        {
-            // Confirms that an HtmlForm control is rendered for
-
-            //为了保险期间还可以在这里加入判断条件防止HTML中已经存在该ID
-        }
+      
 
         private void ClearControls(Control control)
         {
@@ -224,6 +237,7 @@ namespace ATS.ATSUI.hou
             string secondChoice = ViewState["secondChoice"].ToString();
             GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, null, null);
             GridView_Search.DataBind();
+           
         }
 
         
