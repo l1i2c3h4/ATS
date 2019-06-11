@@ -73,7 +73,7 @@ namespace ATS.ATSUI.hou
         }
 
         /// <summary>
-        /// 辅助类数据绑定
+        /// 表格升降辅助类数据绑定
         /// </summary>
         /// <param name="sortField"></param>
         /// <param name="sort"></param>
@@ -136,6 +136,11 @@ namespace ATS.ATSUI.hou
             bindGrid(null, null);
         }
 
+        /// <summary>
+        /// 导出excel表格
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btn_dayin_Click(object sender, EventArgs e)
         {
             GridView_dayin1.DataSource = CreateDataSource();
@@ -167,6 +172,11 @@ namespace ATS.ATSUI.hou
             //base.VerifyRenderingInServerForm(control);不检查是否包含在HTMLFORM中
         }
 
+        /// <summary>
+        /// 导出excel表格之前对数据格式进行格式化
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void DataGrid1_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -189,7 +199,10 @@ namespace ATS.ATSUI.hou
         }
 
 
-
+        /// <summary>
+        /// 清空表格中的自定义插件
+        /// </summary>
+        /// <param name="control"></param>
         private void ClearControls(Control control)
         {
             for (int i = control.Controls.Count - 1; i >= 0; i--)
@@ -228,12 +241,8 @@ namespace ATS.ATSUI.hou
             ScriptManager.RegisterStartupScript(this, this.GetType(), "edit", "display('div2');", true);
             ViewState["firstChoice"] = TextBox_firstChoice.Text;
             ViewState["secondChoice"] = TextBox_secondChoice.Text;
-
-            string datetimeStart = ViewState["datetimeStart"].ToString();
-            string datetimeEnd = ViewState["datetimeEnd"].ToString();
-            string firstChoice = ViewState["firstChoice"].ToString();
-            string secondChoice = ViewState["secondChoice"].ToString();
-            GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, null, null);
+            
+            GridView_Search.DataSource = CreateDataSource();
             GridView_Search.DataBind();
 
         }

@@ -11,7 +11,6 @@
         <h2>应聘信息查询</h2>
         <br />
     </div>
-
     <div class="col-sm-12" id="div1">
         <label id="Label1">应聘时间</label>
         <input type="text" id="datetimeStart" name="datetimeStart" class="form_datetime" readonly autocomplete="off" />

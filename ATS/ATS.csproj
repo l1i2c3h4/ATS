@@ -85,6 +85,7 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery-1.8.3.min.js" />
+    <Content Include="bootstrap\js\jquery-3.4.1.min.js" />
     <Content Include="bootstrap\js\locales\bootstrap-datetimepicker.ar.js" />
     <Content Include="bootstrap\js\locales\bootstrap-datetimepicker.az.js" />
     <Content Include="bootstrap\js\locales\bootstrap-datetimepicker.bg.js" />
