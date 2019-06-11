@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,7 +12,7 @@ namespace ATS.ATSUI.hou
 {
     public partial class RenLiHandle : System.Web.UI.Page
     {
-       
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,7 +37,7 @@ namespace ATS.ATSUI.hou
                 ViewState["secondChoice"] = "";
                 GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, null, null, null, null);
                 GridView_Search.DataBind();
-                
+
             }
         }
 
@@ -129,25 +131,21 @@ namespace ATS.ATSUI.hou
             string key = e.Keys[0].ToString();
             string resume = e.NewValues["Resume"].ToString();
             string interview = e.NewValues["Interview"].ToString();
-            HandleBLL.UpdataHandle(key, interview , resume);
+            HandleBLL.UpdataHandle(key, interview, resume);
             GridView_Search.EditIndex = -1;
             bindGrid(null, null);
         }
 
         protected void btn_dayin_Click(object sender, EventArgs e)
         {
-            string datetimeStart = ViewState["datetimeStart"].ToString();
-            string datetimeEnd = ViewState["datetimeEnd"].ToString();
-            string firstChoice = ViewState["firstChoice"].ToString();
-            string secondChoice = ViewState["secondChoice"].ToString();
-            GridView_dayin1.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, null, null);
+            GridView_dayin1.DataSource = CreateDataSource();
             GridView_dayin1.DataBind();
 
             Response.Clear();
             Response.Buffer = true;
             Response.Charset = "gb2312";
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312");
-            Response.AppendHeader("content-disposition", "attachment;filename=\"" + System.Web.HttpUtility.UrlEncode("数据导出", System.Text.Encoding.UTF8) + ".xls\"");
+            Response.AppendHeader("content-disposition", "attachment;filename=FileName.xls");
             Response.ContentType = "Application/ms-excel";
 
             this.EnableViewState = false;
@@ -157,9 +155,9 @@ namespace ATS.ATSUI.hou
 
             //ClearControls(GridView_Search);
             //this.GridView_Search.RenderControl(oHtmlTextWriter);
-            ClearControls(GridView_dayin1);
+            //ClearControls(GridView_dayin1);
             this.GridView_dayin1.RenderControl(oHtmlTextWriter);
-            Response.Output.Write(oStringWriter.ToString());
+            Response.Write(oStringWriter.ToString());
             Response.Flush();
             Response.End();
         }
@@ -174,7 +172,7 @@ namespace ATS.ATSUI.hou
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 //将整个datagrid都格式化为文本格式
-                int datagridcolumns = 6; //datagrid显示列的数量,
+                int datagridcolumns = 65; //datagrid显示列的数量,
                 //获取显示列的数量可以从数据源那里进行获取
                 //比如绑定DataGrid的数据源是DataSet                   
                 //datagrid显示列的数量 = ds.tables[0].Columns.Count;  
@@ -186,11 +184,11 @@ namespace ATS.ATSUI.hou
                 //对需要格式化的列进行格式化
                 //e.Item.Cells[0].Attributes.Add("style", "vnd.ms-excel.numberformat:@");
                 //e.Item.Cells[2].Attributes.Add("style", "vnd.ms-excel.numberformat::#,##0.00");
-                // e.Item.Cells[3].Attributes.Add("style", "vnd.ms-excel.numberformat:￥#,###.00");          
+                //e.Item.Cells[3].Attributes.Add("style", "vnd.ms-excel.numberformat:￥#,###.00");          
             }
-        } 
+        }
 
-      
+
 
         private void ClearControls(Control control)
         {
@@ -237,9 +235,19 @@ namespace ATS.ATSUI.hou
             string secondChoice = ViewState["secondChoice"].ToString();
             GridView_Search.DataSource = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, null, null);
             GridView_Search.DataBind();
-           
+
         }
 
-        
+        ICollection CreateDataSource()
+        {
+            DataTable dt = new DataTable();
+            string datetimeStart = ViewState["datetimeStart"].ToString();
+            string datetimeEnd = ViewState["datetimeEnd"].ToString();
+            string firstChoice = ViewState["firstChoice"].ToString();
+            string secondChoice = ViewState["secondChoice"].ToString();
+            dt = BaseInformationBLL.SearchView(datetimeStart, datetimeEnd, firstChoice, secondChoice, null, null);
+            DataView dv = new DataView(dt);
+            return dv;
+        }
     }
 }

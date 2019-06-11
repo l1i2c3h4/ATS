@@ -73,7 +73,7 @@ namespace ATS.ATSUI.hou {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView_dayin1;
+        protected global::System.Web.UI.WebControls.DataGrid GridView_dayin1;
         
         /// <summary>
         /// GridView_dayin 控件。

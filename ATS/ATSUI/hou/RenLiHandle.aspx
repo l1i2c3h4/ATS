@@ -22,7 +22,7 @@
 
     <br />
 
-    <div class="col-sm-12" id="div2" style="display: none">
+    <div class="col-sm-12" id="div2" style="display:none">
         <label id="Label3">第一选择</label>
         <asp:TextBox ID="TextBox_firstChoice" runat="server"></asp:TextBox>
         <label id="Label4">第二选择</label>
@@ -82,7 +82,75 @@
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
         <br />
-        <asp:GridView ID="GridView_dayin1" runat="server" ItemDataBound="DataGrid1_ItemDataBound" ></asp:GridView>
+        <asp:DataGrid ID="GridView_dayin1" runat="server" OnItemDataBound="DataGrid1_ItemDataBound" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundColumn DataField="IDNumber" HeaderText="应聘编号" ReadOnly="True" SortExpression="IDNumber" />
+                <asp:BoundColumn DataField="name" HeaderText="姓名" ReadOnly="True" SortExpression="name" />
+                <asp:BoundColumn DataField="IDCard" HeaderText="身份证号" ReadOnly="True" SortExpression="IDCard" />
+                <asp:BoundColumn DataField="gender" HeaderText="性别" ReadOnly="True" SortExpression="gender" />
+                <asp:BoundColumn DataField="dateOfBirth" HeaderText="出生日期" ReadOnly="True" SortExpression="dateOfBirth" />
+                <asp:BoundColumn DataField="maritalStatus" HeaderText="婚姻状况" ReadOnly="True" SortExpression="maritalStatus" />
+                <asp:BoundColumn DataField="politicalStatus" HeaderText="群众" ReadOnly="True" SortExpression="politicalStatus" />
+                <asp:BoundColumn DataField="nativePlace" HeaderText="籍贯" ReadOnly="True" SortExpression="nativePlace" />
+                <asp:BoundColumn DataField="educationalBackgrounp" HeaderText="学历" ReadOnly="True" SortExpression="educationalBackgrounp" />
+                <asp:BoundColumn DataField="height" HeaderText="身高" ReadOnly="True" SortExpression="height" />
+                <asp:BoundColumn DataField="weight" HeaderText="体重" ReadOnly="True" SortExpression="weight" />
+                <asp:BoundColumn DataField="communicableDisease" HeaderText="是否患有传染病" ReadOnly="True" SortExpression="communicableDisease" />
+                <asp:BoundColumn DataField="achromatopsia" HeaderText="是否是色盲" ReadOnly="True" SortExpression="achromatopsia" />
+                <asp:BoundColumn DataField="EstimatedTime" HeaderText="到岗时间" ReadOnly="True" SortExpression="EstimatedTime" />
+                <asp:BoundColumn DataField="Email" HeaderText="电子邮箱" ReadOnly="True" SortExpression="Email" />
+                <asp:BoundColumn DataField="phone" HeaderText="联系电话" ReadOnly="True" SortExpression="phone" />
+                <asp:BoundColumn DataField="firstChoice" HeaderText="第一选择" ReadOnly="True" SortExpression="firstChoice" />
+                <asp:BoundColumn DataField="secondChoice" HeaderText="第二选择" ReadOnly="True" SortExpression="secondChoice" />
+                <asp:BoundColumn DataField="adjust" HeaderText="是否服从调剂" ReadOnly="True" SortExpression="adjust" />
+                <asp:BoundColumn DataField="address" HeaderText="联系地址" ReadOnly="True" SortExpression="address" />
+                <asp:BoundColumn DataField="resume" HeaderText="简历筛选情况" ReadOnly="True" SortExpression="resume" />
+                <asp:BoundColumn DataField="interview" HeaderText="面试情况" ReadOnly="True" SortExpression="interview" />
+                <asp:BoundColumn DataField="workBeginTime01" HeaderText="工作起始时间" ReadOnly="True" SortExpression="workBeginTime01" />
+                <asp:BoundColumn DataField="workEndTime01" HeaderText="工作截止时间" ReadOnly="True" SortExpression="workEndTime01" />
+                <asp:BoundColumn DataField="workPlace01" HeaderText="工作地点" ReadOnly="True" SortExpression="workPlace01" />
+                <asp:BoundColumn DataField="workJob01" HeaderText="工作岗位" ReadOnly="True" SortExpression="workJob01" />
+                <asp:BoundColumn DataField="workBeginTime02" HeaderText="工作起始时间" ReadOnly="True" SortExpression="workBeginTime02" />
+                <asp:BoundColumn DataField="workEndTime02" HeaderText="工作截止时间" ReadOnly="True" SortExpression="workEndTime02" />
+                <asp:BoundColumn DataField="workPlace02" HeaderText="工作地点" ReadOnly="True" SortExpression="workPlace02" />
+                <asp:BoundColumn DataField="workJob02" HeaderText="工作岗位" ReadOnly="True" SortExpression="workJob02" />
+                <asp:BoundColumn DataField="workBeginTime03" HeaderText="工作起始时间" ReadOnly="True" SortExpression="workBeginTime03" />
+                <asp:BoundColumn DataField="workEndTime03" HeaderText="工作截止时间" ReadOnly="True" SortExpression="workEndTime03" />
+                <asp:BoundColumn DataField="workPlace03" HeaderText="工作地点" ReadOnly="True" SortExpression="workPlace03" />
+                <asp:BoundColumn DataField="workJob03" HeaderText="工作岗位" ReadOnly="True" SortExpression="workJob03" />
+                <asp:BoundColumn DataField="studyBeginTime01" HeaderText="学习起始时间" ReadOnly="True" SortExpression="studyBeginTime01" />
+                <asp:BoundColumn DataField="studyEndTime01" HeaderText="学习截止时间" ReadOnly="True" SortExpression="studyEndTime01" />
+                <asp:BoundColumn DataField="studyPlace01" HeaderText="学习地点" ReadOnly="True" SortExpression="studyPlace01" />
+                <asp:BoundColumn DataField="studyMajor01" HeaderText="学习专业" ReadOnly="True" SortExpression="studyMajor01" />
+                <asp:BoundColumn DataField="studyBeginTime02" HeaderText="学习起始时间" ReadOnly="True" SortExpression="studyBeginTime02" />
+                <asp:BoundColumn DataField="studyEndTime02" HeaderText="学习截止时间" ReadOnly="True" SortExpression="studyEndTime02" />
+                <asp:BoundColumn DataField="studyPlace02" HeaderText="学习地点" ReadOnly="True" SortExpression="studyPlace02" />
+                <asp:BoundColumn DataField="studyMajor02" HeaderText="学习专业" ReadOnly="True" SortExpression="studyMajor02" />
+                <asp:BoundColumn DataField="studyBeginTime03" HeaderText="学习起始时间" ReadOnly="True" SortExpression="studyBeginTime03" />
+                <asp:BoundColumn DataField="studyEndTime03" HeaderText="学习截止时间" ReadOnly="True" SortExpression="studyEndTime03" />
+                <asp:BoundColumn DataField="studyPlace03" HeaderText="学习地点" ReadOnly="True" SortExpression="studyPlace03" />
+                <asp:BoundColumn DataField="studyMajor03" HeaderText="学习专业" ReadOnly="True" SortExpression="studyMajor03" />
+                <asp:BoundColumn DataField="studyConputer" HeaderText="电脑水平" ReadOnly="True" SortExpression="studyConputer" />
+                <asp:BoundColumn DataField="studyEnglish" HeaderText="英语等级" ReadOnly="True" SortExpression="studyEnglish" />
+                <asp:BoundColumn DataField="studyOther" HeaderText="其他证书" ReadOnly="True" SortExpression="studyOther" />
+                <asp:BoundColumn DataField="familyRelationship01" HeaderText="家庭成员关系" ReadOnly="True" SortExpression="familyRelationship01" />
+                <asp:BoundColumn DataField="familyName01" HeaderText="家庭成员姓名" ReadOnly="True" SortExpression="familyName01" />
+                <asp:BoundColumn DataField="familyAge01" HeaderText="家庭成员年龄" ReadOnly="True" SortExpression="familyAge01" />
+                <asp:BoundColumn DataField="familyPlace01" HeaderText="工作单位" ReadOnly="True" SortExpression="familyPlace01" />
+                <asp:BoundColumn DataField="familyJob01" HeaderText="岗位" ReadOnly="True" SortExpression="familyJob01" />
+                <asp:BoundColumn DataField="familyRelationship02" HeaderText="家庭成员关系" ReadOnly="True" SortExpression="familyRelationship02" />
+                <asp:BoundColumn DataField="familyName02" HeaderText="家庭成员姓名" ReadOnly="True" SortExpression="familyName02" />
+                <asp:BoundColumn DataField="familyAge02" HeaderText="家庭成员年龄" ReadOnly="True" SortExpression="familyAge02" />
+                <asp:BoundColumn DataField="familyPlace02" HeaderText="工作单位" ReadOnly="True" SortExpression="familyPlace02" />
+                <asp:BoundColumn DataField="familyJob02" HeaderText="岗位" ReadOnly="True" SortExpression="familyJob02" />
+                <asp:BoundColumn DataField="familyRelationship03" HeaderText="家庭成员关系" ReadOnly="True" SortExpression="familyRelationship03" />
+                <asp:BoundColumn DataField="familyName03" HeaderText="家庭成员姓名" ReadOnly="True" SortExpression="familyName03" />
+                <asp:BoundColumn DataField="familyAge03" HeaderText="家庭成员年龄" ReadOnly="True" SortExpression="familyAge03" />
+                <asp:BoundColumn DataField="familyPlace03" HeaderText="工作单位" ReadOnly="True" SortExpression="familyPlace03" />
+                <asp:BoundColumn DataField="familyJob03" HeaderText="岗位" ReadOnly="True" SortExpression="familyJob03" />
+                <asp:BoundColumn DataField="time" HeaderText="申请时间" ReadOnly="True" SortExpression="time" />
+            </Columns>
+        </asp:DataGrid>
         <!--<div style="vnd.ms-excel.numberformat:@">
             <asp:GridView ID="GridView_dayin" runat="server" AutoGenerateColumns="False">
                 <Columns>
