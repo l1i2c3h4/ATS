@@ -79,6 +79,7 @@ namespace ATS.ATSUI.hou
         /// <param name="sort"></param>
         private void bindGrid(string sortField, string sort)
         {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "edit", "display('div2');", true);
             string datetimeStart = ViewState["datetimeStart"].ToString();
             string datetimeEnd = ViewState["datetimeEnd"].ToString();
             string firstChoice = ViewState["firstChoice"].ToString();

@@ -13,7 +13,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script type="text/javascript">
-       
+
         function display(id) {
             var traget = document.getElementById(id);
             if (traget.style.display == "none") {
@@ -35,13 +35,22 @@
                 <div class="form-group">
                     <table>
                         <tr>
-                            <td class="col-md-2" style='vertical-align: middle'>
-                                <asp:TreeView ID="TreeView1" DataSourceID="SiteMapDataSource1" runat="server">
+                            <td class="col-md-2" style='vertical-align:auto'>
+                                <asp:TreeView ID="TreeView1" DataSourceID="SiteMapDataSource1" runat="server" ImageSet="Arrows">
+                                    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                                    <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" VerticalPadding="0px" HorizontalPadding="5px" NodeSpacing="0px" />
+                                    <ParentNodeStyle Font-Bold="False" />
+                                    <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
                                 </asp:TreeView>
                             </td>
                             <td class="col-md-10">
-                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                                </asp:ContentPlaceHolder>
+                                <asp:ScriptManager runat="server"></asp:ScriptManager>
+                                <asp:UpdatePanel runat="server">
+                                    <ContentTemplate>
+                                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                        </asp:ContentPlaceHolder>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
                             </td>
                         </tr>
                     </table>

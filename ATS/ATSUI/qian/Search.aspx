@@ -88,14 +88,14 @@
                     <td colspan="3">
                         <asp:Label ID="Label_interview" runat="server" Text=""></asp:Label></td>
                 </tr>
-                <tr>
+                <!--<tr>
                     <th colspan="4" style="text-align: center">当前通知
                     </th>
 
                 </tr>
                 <tr>
                     <td colspan="4">暂无！请随时保持关注，耐心等候通知！</td>
-                </tr>
+                </tr>-->
 
 
             </table>
